@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (paused = true)
+        if (paused)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -57,33 +57,44 @@ public class PlayerController : MonoBehaviour
 
         else
         {
+            // Movement and Camera Control
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                if (activeWeapon == "pistol")
+                {
+                    FirePistol();
+                }
                 
+                else if (activeWeapon == "shotgun")
+                {
+                    FireShotgun();
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                UI.ActiveWeapon(1);
+                activeWeapon = "pistol";
+                // Animation
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                UI.ActiveWeapon(2);
+                activeWeapon = "shotgun";
+                // Animation
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                UI.OpenMenu();
+                game.Pause();
+                paused = true;
             }
         }
-        // else
-            
-            // Movement and Camera Control
-        
-            // if (Input.GetKeyDown(LeftMouse) 
-                // if (ActiveWeapon = "pistol")
-                    // FirePistol();
-                // else if (ActiveWeapon = "shotgun")
-                    // FireShotgun();
-            
-            // if (Input.GetKeyDown(1))
-                // PistolEquip();
-            
-            // if (Input.GetKeyDown(2))
-                // ShotgunEquip();
-            
-            // if (Input.GetKeyDown(escape))
-                // UI.OpenMenu()
-                // Pause()
     
-        // UI.PlayerUpdateUI(bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax);
+        UI.PlayerUpdateUI(bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax);
     }
     
     /* PICKUP */
@@ -97,18 +108,25 @@ public class PlayerController : MonoBehaviour
      *                 Heal(.25);
      *                 audio.playClip(i);
      *
+     *            if collider.GameObject.name = "shotgun"
+     *                 hasShotgun = true;
+     * 
      *     if (Collider.tag = "projectile")
      *
+     *
+ 
      */
     
     /* WEAPONS */
-    // public void ShotgunEquip()
-        // UI.ActiveWeapon(2)
-        // ActiveWeapon = "shotgun"
-    
-    // public void PistolEquip()
-        // UI.ActiveWeapon(1)
-        // ActiveWeapon = "pistol"
-   
-    
+    public void FirePistol()
+    {
+        audio.playClip(4);
+        // Animation
+    }
+
+    public void FireShotgun()
+    {
+        audio.playClip(5);
+        // Animation
+    }
 }

@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     
     void Start()
     {
-        gameState = "mainmenu";
+        gameState = "main menu";
     }
 
 
@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
     
     /* GAME STATE CONTROL */
     /* public void CheckGameState()
-     *     if (gameState = "mainmenu")
+     *     if (gameState = "main menu")
      *
      *     if (gameState = "firstLevel")
      *
