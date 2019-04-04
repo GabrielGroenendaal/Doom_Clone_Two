@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     /* GAMESTATE */
     public bool isAlive;
     public bool hasShotgun;
-    public bool paused;
+    public bool paused = false;
     public string activeWeapon;
     
     /* PLAYER RESOURCES */
