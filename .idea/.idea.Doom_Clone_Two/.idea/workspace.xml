@@ -10,29 +10,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Door.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2159">
-              <caret line="130" column="4" lean-forward="true" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
+            <state relative-caret-position="102">
+              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
               <folding>
-                <marker date="1554396067907" expanded="false" signature="6:113" ph="..." />
-                <marker date="1554396067907" expanded="true" signature="160:3885" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="918:1232" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="1256:2714" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="1282:1476" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="1342:1466" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="1490:2430" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="1594:1878" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="1654:1724" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="1793:1864" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="1929:2063" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="2114:2249" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="2300:2420" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="2737:3226" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="3253:3680" ph="/* public void OnCollisionEnter() ... */" />
-                <marker date="1554396067907" expanded="true" signature="3732:3792" ph="{...}" />
-                <marker date="1554396067907" expanded="true" signature="3823:3883" ph="{...}" />
+                <marker date="1554782141025" expanded="false" signature="6:78" ph="..." />
+                <marker date="1554782141025" expanded="true" signature="79:171" ph="/* Created By: Parker ... */" />
+                <marker date="1554782141025" expanded="true" signature="205:599" ph="{...}" />
+                <marker date="1554782141025" expanded="true" signature="316:408" ph="{...}" />
+                <marker date="1554782141025" expanded="true" signature="466:487" ph="{...}" />
+                <marker date="1554782141025" expanded="true" signature="515:597" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Player_Move_FP.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-393">
+              <folding>
+                <marker date="1554777965922" expanded="false" signature="6:78" ph="..." />
+                <marker date="1554777965922" expanded="true" signature="123:1928" ph="{...}" />
+                <marker date="1554777965922" expanded="true" signature="130:237" ph="/* FOR CLARIFICATION, THIS IS JUST PLACEHOLDER CODE FROM MY MIDTERM SO THE PLAYER CAN MOVE!! ... */" />
+                <marker date="1554777965922" expanded="true" signature="828:881" ph="/* public float pitchMin; ... */" />
+                <marker date="1554777965922" expanded="true" signature="899:1012" ph="{...}" />
+                <marker date="1554777965922" expanded="true" signature="1031:1735" ph="{...}" />
+                <marker date="1554777965922" expanded="true" signature="1759:1926" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Raycast.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+              <folding>
+                <marker date="1554782004341" expanded="false" signature="6:78" ph="..." />
+                <marker date="1554782004341" expanded="true" signature="81:154" ph="/* Original Script (Raycast) By: Logan ... */" />
+                <marker date="1554782004341" expanded="true" signature="191:1353" ph="{...}" />
+                <marker date="1554782004341" expanded="true" signature="310:331" ph="{...}" />
+                <marker date="1554782004341" expanded="true" signature="389:1351" ph="{...}" />
+                <marker date="1554782004341" expanded="true" signature="576:941" ph="{...}" />
+                <marker date="1554782004341" expanded="true" signature="718:931" ph="{...}" />
+                <marker date="1554782004341" expanded="true" signature="981:1345" ph="{...}" />
+                <marker date="1554782004341" expanded="true" signature="1129:1334" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/EnemyBaseScript.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+              <folding>
+                <marker date="1554783027605" expanded="false" signature="6:78" ph="..." />
+                <marker date="1554783027605" expanded="true" signature="79:120" ph="/* Created By:Parker ... */" />
+                <marker date="1554783027605" expanded="true" signature="165:916" ph="{...}" />
+                <marker date="1554783027605" expanded="true" signature="273:468" ph="{...}" />
+                <marker date="1554783027605" expanded="true" signature="487:562" ph="{...}" />
+                <marker date="1554783027605" expanded="true" signature="517:556" ph="{...}" />
+                <marker date="1554783027605" expanded="true" signature="607:707" ph="{...}" />
+                <marker date="1554783027605" expanded="true" signature="730:781" ph="{...}" />
+                <marker date="1554783027605" expanded="true" signature="811:846" ph="{...}" />
+                <marker date="1554783027605" expanded="true" signature="882:914" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Raycast_original.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="31" column="62" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="62" />
+              <folding>
+                <marker date="1554779452588" expanded="false" signature="6:78" ph="..." />
+                <marker date="1554779452588" expanded="true" signature="125:1283" ph="{...}" />
+                <marker date="1554779452588" expanded="true" signature="304:325" ph="{...}" />
+                <marker date="1554779452588" expanded="true" signature="383:1281" ph="{...}" />
+                <marker date="1554779452588" expanded="true" signature="628:1275" ph="{...}" />
+                <marker date="1554779452588" expanded="true" signature="687:1109" ph="{...}" />
+                <marker date="1554779452588" expanded="true" signature="953:1095" ph="{...}" />
+                <marker date="1554779452588" expanded="true" signature="1151:1265" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -40,39 +106,64 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>cameraRayDistance</find>
+      <find>HitScanRange</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>HitScanRange</replace>
+      <replace>playerDistance</replace>
+      <replace>doorRange</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Raycast_original.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/EnemyBaseScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Player_Move_FP.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Player_Move_FP_original.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Raycast.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Player_Move_FP(original).cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Player_Move_FP_original.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Raycast.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Raycast_original.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Raycast.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Door.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/EnemyBaseScript.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="127" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="270" />
+    <option name="y" value="-24" />
     <option name="width" value="1440" />
-    <option name="height" value="774" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectView">
     <navigator currentView="UnityExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
       </pane>
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
+      <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -118,11 +209,12 @@
       <updated>1554394841645</updated>
       <workItem from="1554394850382" duration="208000" />
       <workItem from="1554395360355" duration="1148000" />
+      <workItem from="1554778973530" duration="4051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1356000" />
+    <option name="totallyTimeSpent" value="5407000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -135,8 +227,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09798658" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -156,7 +249,7 @@
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Unit Tests" order="13" />
       <window_info anchor="bottom" id="Terminal" order="14" />
-      <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -182,10 +275,63 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Player_Move_FP(original).cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Player_Move_FP.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Raycast.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Player_Move_FP_original.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <marker date="1554779528774" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554779528774" expanded="true" signature="132:1937" ph="{...}" />
+            <marker date="1554779528774" expanded="true" signature="139:246" ph="/* FOR CLARIFICATION, THIS IS JUST PLACEHOLDER CODE FROM MY MIDTERM SO THE PLAYER CAN MOVE!! ... */" />
+            <marker date="1554779528774" expanded="true" signature="837:890" ph="/* public float pitchMin; ... */" />
+            <marker date="1554779528774" expanded="true" signature="908:1021" ph="{...}" />
+            <marker date="1554779528774" expanded="true" signature="1040:1744" ph="{...}" />
+            <marker date="1554779528774" expanded="true" signature="1768:1935" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GameController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <marker date="1554395254389" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554395254389" expanded="true" signature="206:1042" ph="{...}" />
+            <marker date="1554395254389" expanded="true" signature="603:648" ph="{...}" />
+            <marker date="1554395254389" expanded="true" signature="668:689" ph="{...}" />
+            <marker date="1554395254389" expanded="true" signature="728:946" ph="/* public void CheckGameState() ... */" />
+            <marker date="1554395254389" expanded="true" signature="971:992" ph="{...}" />
+            <marker date="1554395254389" expanded="true" signature="1019:1040" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="130" column="4" lean-forward="true" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
+        <state relative-caret-position="1700">
+          <caret line="104" column="13" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
           <folding>
             <marker date="1554396067907" expanded="false" signature="6:113" ph="..." />
             <marker date="1554396067907" expanded="true" signature="160:3885" ph="{...}" />
@@ -204,6 +350,90 @@
             <marker date="1554396067907" expanded="true" signature="3253:3680" ph="/* public void OnCollisionEnter() ... */" />
             <marker date="1554396067907" expanded="true" signature="3732:3792" ph="{...}" />
             <marker date="1554396067907" expanded="true" signature="3823:3883" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Logan_Scripts/Raycast_original.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="31" column="62" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="62" />
+          <folding>
+            <marker date="1554779452588" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554779452588" expanded="true" signature="125:1283" ph="{...}" />
+            <marker date="1554779452588" expanded="true" signature="304:325" ph="{...}" />
+            <marker date="1554779452588" expanded="true" signature="383:1281" ph="{...}" />
+            <marker date="1554779452588" expanded="true" signature="628:1275" ph="{...}" />
+            <marker date="1554779452588" expanded="true" signature="687:1109" ph="{...}" />
+            <marker date="1554779452588" expanded="true" signature="953:1095" ph="{...}" />
+            <marker date="1554779452588" expanded="true" signature="1151:1265" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Player_Move_FP.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-393">
+          <folding>
+            <marker date="1554777965922" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554777965922" expanded="true" signature="123:1928" ph="{...}" />
+            <marker date="1554777965922" expanded="true" signature="130:237" ph="/* FOR CLARIFICATION, THIS IS JUST PLACEHOLDER CODE FROM MY MIDTERM SO THE PLAYER CAN MOVE!! ... */" />
+            <marker date="1554777965922" expanded="true" signature="828:881" ph="/* public float pitchMin; ... */" />
+            <marker date="1554777965922" expanded="true" signature="899:1012" ph="{...}" />
+            <marker date="1554777965922" expanded="true" signature="1031:1735" ph="{...}" />
+            <marker date="1554777965922" expanded="true" signature="1759:1926" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Raycast.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+          <folding>
+            <marker date="1554782004341" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554782004341" expanded="true" signature="81:154" ph="/* Original Script (Raycast) By: Logan ... */" />
+            <marker date="1554782004341" expanded="true" signature="191:1353" ph="{...}" />
+            <marker date="1554782004341" expanded="true" signature="310:331" ph="{...}" />
+            <marker date="1554782004341" expanded="true" signature="389:1351" ph="{...}" />
+            <marker date="1554782004341" expanded="true" signature="576:941" ph="{...}" />
+            <marker date="1554782004341" expanded="true" signature="718:931" ph="{...}" />
+            <marker date="1554782004341" expanded="true" signature="981:1345" ph="{...}" />
+            <marker date="1554782004341" expanded="true" signature="1129:1334" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Door.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding>
+            <marker date="1554782141025" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554782141025" expanded="true" signature="79:171" ph="/* Created By: Parker ... */" />
+            <marker date="1554782141025" expanded="true" signature="205:599" ph="{...}" />
+            <marker date="1554782141025" expanded="true" signature="316:408" ph="{...}" />
+            <marker date="1554782141025" expanded="true" signature="466:487" ph="{...}" />
+            <marker date="1554782141025" expanded="true" signature="515:597" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/EnemyBaseScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <marker date="1554783027605" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554783027605" expanded="true" signature="79:120" ph="/* Created By:Parker ... */" />
+            <marker date="1554783027605" expanded="true" signature="165:916" ph="{...}" />
+            <marker date="1554783027605" expanded="true" signature="273:468" ph="{...}" />
+            <marker date="1554783027605" expanded="true" signature="487:562" ph="{...}" />
+            <marker date="1554783027605" expanded="true" signature="517:556" ph="{...}" />
+            <marker date="1554783027605" expanded="true" signature="607:707" ph="{...}" />
+            <marker date="1554783027605" expanded="true" signature="730:781" ph="{...}" />
+            <marker date="1554783027605" expanded="true" signature="811:846" ph="{...}" />
+            <marker date="1554783027605" expanded="true" signature="882:914" ph="{...}" />
           </folding>
         </state>
       </provider>

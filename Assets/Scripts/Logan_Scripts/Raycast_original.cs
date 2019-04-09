@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Raycast : MonoBehaviour
+public class Raycast_original : MonoBehaviour
 {
     public float cameraRayDistance = 100f;
     public float playerPos;
