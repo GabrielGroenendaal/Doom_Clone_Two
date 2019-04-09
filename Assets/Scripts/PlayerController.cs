@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public Camera camera;
     
     /* GAMESTATE */
-    public bool isAlive;
     public bool hasShotgun;
     public bool paused;
     public string activeWeapon;
@@ -45,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (paused)
+        /* if (paused)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -53,10 +52,9 @@ public class PlayerController : MonoBehaviour
                 game.Unpause();
                 paused = false;
             }
-        }
+        }*/
 
-        else
-        {
+      
             // Movement and Camera Control
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -75,6 +73,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 UI.ActiveWeapon(1);
+                audio.playClip(4);
                 activeWeapon = "pistol";
                 // Animation
             }
@@ -82,6 +81,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 UI.ActiveWeapon(2);
+                audio.playClip(5);
                 activeWeapon = "shotgun";
                 // Animation
             }
@@ -92,30 +92,94 @@ public class PlayerController : MonoBehaviour
                 game.Pause();
                 paused = true;
             }
-        }
-    
+        
+        
         UI.PlayerUpdateUI(bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax);
     }
     
     /* PICKUP */
-    /*
-     * public void OnCollisionEnter()
-     * 
-     *     if (Collider.tag = "pickup")
-     *         
-     *            if collider.GameObject.name = "medkit"
-     *
-     *                 Heal(.25);
-     *                 audio.playClip(i);
-     *
-     *            if collider.GameObject.name = "shotgun"
-     *                 hasShotgun = true;
-     * 
-     *     if (Collider.tag = "projectile")
-     *
-     *
- 
-     */
+    public void OnTriggerEnter(Collider c)
+    {
+        if (c.CompareTag("pickup"))
+        {
+            if (c.transform.name == "Ammo Clips")
+            {
+                if (bullets < 200)
+                {
+                    bullets += 10;
+                    c.gameObject.SetActive(false);
+                }
+                
+            }
+            
+            else if (c.transform.name == "Bullet boxes")
+            {
+                if (bullets < 200)
+                {
+                    bullets += 50;
+                    c.gameObject.SetActive(false);
+                }
+            }
+            
+            else if (c.transform.name == "Shells")
+            {
+                if (shells < 50)
+                {
+                    shells += 4;
+                    c.gameObject.SetActive(false);
+                }
+            }
+            
+            else if (c.transform.name == "Shell boxes")
+            {
+                if (shells < 50)
+                {
+                    shells += 20;
+                    c.gameObject.SetActive(false);
+                }
+            }
+            
+            else if (c.transform.name == "Medikits")
+            {
+                
+            }
+            
+            else if (c.transform.name == "Stimpacks")
+            {
+                
+            }
+            
+            else if (c.transform.name == "Armor bonuses")
+            {
+                
+            }
+            
+            else if (c.transform.name == "Health Bonuses")
+            {
+                
+            }
+            
+            else if (c.transform.name == "Blue Armor")
+            {
+                
+            }
+            
+            else if (c.transform.name == "Green Armor")
+            {
+                
+            }
+        }
+        
+        else if (c.CompareTag("projectile"))
+        {
+            
+        }
+        
+        else if (c.CompareTag("enemy"))
+        {
+            
+        }
+    }
     
     /* WEAPONS */
     public void FirePistol()
