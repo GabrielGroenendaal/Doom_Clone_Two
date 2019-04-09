@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
 
+// This script serves as a brain for several 
 public class TestPlayerController : MonoBehaviour
 {
     
-    /* REFERENCES */
+    /* REFERENCES TO OTHER SCRIPTS */
     // public GameController game;
     public TestAudioController audio;
     public TestUIController UI;
     
-    /* GAMESTATE */
+    /* GAME STATES AND BOOLEANS */
     public bool hasShotgun;
     // public bool paused;
     public string activeWeapon;
-    public bool blueArmor;
-    public bool greenArmor;
-    public float reloadTimer;
+    public bool blueArmor; // Does player have Blue Armor
+    public bool greenArmor; // Does player have Green Armor
+    public float reloadTimer; // Timer the tracks 
     
     /* PLAYER RESOURCES */
     public int bullets;
