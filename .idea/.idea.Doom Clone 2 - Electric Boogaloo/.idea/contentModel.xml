@@ -6,6 +6,13 @@
     <e p="C:\Users\gabeg\Documents\Doom Clone 2 - Electric Boogaloo" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Pickup Testing" t="Include">
+          <e p="Fading.cs" t="Include" />
+          <e p="Floating.cs" t="Include" />
+          <e p="TestAudioController.cs" t="Include" />
+          <e p="TestPlayerController.cs" t="Include" />
+          <e p="TestUIController.cs" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="AudioController.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
