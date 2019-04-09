@@ -17,6 +17,16 @@
           <e p="AudioController.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
           <e p="Imp.cs" t="Include" />
+          <e p="Logan_Scripts" t="Include">
+            <e p="Player_Move_FP_original.cs" t="Include" />
+            <e p="Raycast_original.cs" t="Include" />
+          </e>
+          <e p="Parker_Scripts" t="Include">
+            <e p="Door.cs" t="Include" />
+            <e p="EnemyBaseScript.cs" t="Include" />
+            <e p="Player_Move_FP.cs" t="Include" />
+            <e p="Raycast.cs" t="Include" />
+          </e>
           <e p="PickUp.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Trooper.cs" t="Include" />
