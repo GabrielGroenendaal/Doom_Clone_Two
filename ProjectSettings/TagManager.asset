@@ -4,16 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
 <<<<<<< .merge_file_a14240
+=======
+>>>>>>> 4d4e503507d99edfaea22bbc6dd77ff01d881afa
   - Pickup
   - Shotgun
   - Projectile
   - Enemy
   - Invisible Wall
+<<<<<<< HEAD
 =======
   - Door
   - Enemy
 >>>>>>> .merge_file_a23300
+=======
+>>>>>>> 4d4e503507d99edfaea22bbc6dd77ff01d881afa
   layers:
   - Default
   - TransparentFX
