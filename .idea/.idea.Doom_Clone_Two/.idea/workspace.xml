@@ -9,24 +9,30 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+            <state relative-caret-position="2159">
+              <caret line="130" column="4" lean-forward="true" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
               <folding>
-                <marker date="1554395058756" expanded="true" signature="6:113" ph="..." />
-                <marker date="1554395058756" expanded="true" signature="160:2631" ph="{...}" />
-                <marker date="1554395058756" expanded="true" signature="706:960" ph="{...}" />
-                <marker date="1554395058756" expanded="true" signature="984:2057" ph="{...}" />
-                <marker date="1554395058756" expanded="true" signature="1017:1211" ph="{...}" />
-                <marker date="1554395058756" expanded="true" signature="1077:1201" ph="{...}" />
-                <marker date="1554395058756" expanded="true" signature="1225:1341" ph="{...}" />
-                <marker date="1554395058756" expanded="true" signature="1286:1331" ph="{...}" />
-                <marker date="1554395058756" expanded="true" signature="1350:2051" ph="/* else ... */" />
-                <marker date="1554395058756" expanded="true" signature="2084:2394" ph="/* public void OnCollisionEnter() ... */" />
-                <marker date="1554395058756" expanded="true" signature="2422:2620" ph="/* public void ShotgunEquip() ... */" />
+                <marker date="1554396067907" expanded="false" signature="6:113" ph="..." />
+                <marker date="1554396067907" expanded="true" signature="160:3885" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="918:1232" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="1256:2714" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="1282:1476" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="1342:1466" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="1490:2430" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="1594:1878" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="1654:1724" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="1793:1864" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="1929:2063" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="2114:2249" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="2300:2420" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="2737:3226" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="3253:3680" ph="/* public void OnCollisionEnter() ... */" />
+                <marker date="1554396067907" expanded="true" signature="3732:3792" ph="{...}" />
+                <marker date="1554396067907" expanded="true" signature="3823:3883" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -49,9 +55,9 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="240" />
-    <option name="y" value="128" />
+    <option name="y" value="127" />
     <option name="width" value="1440" />
-    <option name="height" value="773" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectView">
     <navigator currentView="UnityExplorer" proportions="" version="1">
@@ -59,6 +65,7 @@
     </navigator>
     <panes>
       <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
         <option name="show-project-names" value="true" />
@@ -66,7 +73,6 @@
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -111,11 +117,12 @@
       <option name="presentableId" value="Default" />
       <updated>1554394841645</updated>
       <workItem from="1554394850382" duration="208000" />
+      <workItem from="1554395360355" duration="1148000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208000" />
+    <option name="totallyTimeSpent" value="1356000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -129,20 +136,11 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -150,13 +148,22 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="bottom" id="NuGet" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Performance Profiler" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Unity" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Unit Tests" order="13" />
+      <window_info anchor="bottom" id="Terminal" order="14" />
+      <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Errors In Solution" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="6" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,20 +184,26 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="64" column="9" lean-forward="true" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+        <state relative-caret-position="2159">
+          <caret line="130" column="4" lean-forward="true" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
           <folding>
-            <marker date="1554395058756" expanded="true" signature="6:113" ph="..." />
-            <marker date="1554395058756" expanded="true" signature="160:2631" ph="{...}" />
-            <marker date="1554395058756" expanded="true" signature="706:960" ph="{...}" />
-            <marker date="1554395058756" expanded="true" signature="984:2057" ph="{...}" />
-            <marker date="1554395058756" expanded="true" signature="1017:1211" ph="{...}" />
-            <marker date="1554395058756" expanded="true" signature="1077:1201" ph="{...}" />
-            <marker date="1554395058756" expanded="true" signature="1225:1341" ph="{...}" />
-            <marker date="1554395058756" expanded="true" signature="1286:1331" ph="{...}" />
-            <marker date="1554395058756" expanded="true" signature="1350:2051" ph="/* else ... */" />
-            <marker date="1554395058756" expanded="true" signature="2084:2394" ph="/* public void OnCollisionEnter() ... */" />
-            <marker date="1554395058756" expanded="true" signature="2422:2620" ph="/* public void ShotgunEquip() ... */" />
+            <marker date="1554396067907" expanded="false" signature="6:113" ph="..." />
+            <marker date="1554396067907" expanded="true" signature="160:3885" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="918:1232" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="1256:2714" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="1282:1476" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="1342:1466" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="1490:2430" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="1594:1878" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="1654:1724" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="1793:1864" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="1929:2063" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="2114:2249" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="2300:2420" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="2737:3226" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="3253:3680" ph="/* public void OnCollisionEnter() ... */" />
+            <marker date="1554396067907" expanded="true" signature="3732:3792" ph="{...}" />
+            <marker date="1554396067907" expanded="true" signature="3823:3883" ph="{...}" />
           </folding>
         </state>
       </provider>

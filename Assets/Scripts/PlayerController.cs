@@ -29,6 +29,15 @@ public class PlayerController : MonoBehaviour
     public float ArmorMax;
     
 
+    /* MOVEMENT VARIABLES */
+    Rigidbody thisRigidBody;
+    public float moveSpeed;
+    public float fpForward;
+    public float fpStrafe;
+    public Vector3 inputVector;
+    public Vector3 outputVector;
+
+    
     void Start()
     {
         health = 100;
@@ -41,6 +50,8 @@ public class PlayerController : MonoBehaviour
         shellsMax = 50;
         hasShotgun = false; 
         activeWeapon = "pistol";
+        
+        thisRigidBody = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -95,6 +106,27 @@ public class PlayerController : MonoBehaviour
         }
     
         UI.PlayerUpdateUI(bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax);
+        
+        // MOVEMENT PARKER
+        thisRigidBody.velocity = inputVector * moveSpeed + (Physics.gravity * 0.69f);
+
+        outputVector = thisRigidBody.velocity;
+    }
+    
+    void Update()
+    {
+        //MOVEMENT  PARKER
+        float pitch = Input.GetAxis("Mouse X");
+        float yaw = Input.GetAxis("Mouse Y");
+
+        this.transform.Rotate(0, pitch, 0);         // effects camera pitch
+        Camera.main.transform.Rotate(-yaw, 0, 0);    // effect camera yaw
+
+        fpForward = Input.GetAxis("Vertical");
+        fpStrafe = Input.GetAxis("Horizontal");
+    
+        inputVector = transform.forward * fpForward;
+        inputVector += transform.right * fpStrafe;
     }
     
     /* PICKUP */
