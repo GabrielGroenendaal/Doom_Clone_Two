@@ -4,20 +4,27 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+// This script manages the UI, updating it with information provided by the PlayerController, including:
+//    (A) Ammunition of Active Weapon
+//    (B) Total Ammunition
+//    (C) Health Percentage
+//    (D) Armor Percentage
+//    (E) Equipped Weapon
+
 public class TestUIController : MonoBehaviour
 {
-    /* REFERENCES */
+    /* SCRIPT REFERENCES */
     public TestPlayerController player;
     public Fading popUP;
-    // public GameController game;
+    public GameController game;
 
-    /* GAMESTATE */
-    // public string UIState;
-    public bool fadeOut;
+    /* GAMESTATE VARIABLES */
+    public string UIState; // Indicates if UI is menu, game, gameOver, etc. Not functional.
+    public bool fadeOut; // a boolean that works with the timer to create a fluid fade-in-then-out
     public float timer;
 
     /* GAME UI ELEMENTS */
-    // public Image GameUI;
+    public Image GameUI; 
     public RawImage Shotgun;
     public RawImage Pistol;
     public TextMeshProUGUI Health;
@@ -26,17 +33,13 @@ public class TestUIController : MonoBehaviour
     public TextMeshProUGUI Bullets;
     public TextMeshProUGUI Shells;
 
+    // We don't have a menu UI set up yet
     /* MENU UI ELEMENTS */
     /* public Image menuUI;
     public Button button1;
     public Button button2;*/
 
-    void Start()
-    {
- 
-    }
-
-
+    // Increments the timer and triggers the FadeOut
     void Update()
     {
         if (timer > 0)
@@ -52,24 +55,29 @@ public class TestUIController : MonoBehaviour
     }
 
     /* PLAYER UPDATE */
+    // This code takes all the values provided by the TestPlayerController and translates them to the UI Overlay
     public void PlayerUpdateUI(string activeWeapon, int bullets, int bulletMax, int shells, int shellsMax, float health, float healthMax,
         float armor, float armorMax)
     {
-        var healthPercent = (health / healthMax) * 100;
+        // HEALTH
+        var healthPercent = (health / healthMax) * 100; 
         Health.text = healthPercent + "%";
-
-        var armorPercent = (armor / armorMax) * 100;
+        
+        // ARMOR
+        var armorPercent = (armor / armorMax) * 100; 
         Armor.text = armorPercent + "%";
-
+        
+        // AMMO
         Bullets.text = bullets + " / " + bulletMax;
         Shells.text = shells + " / " + shellsMax;
-
-        if (player.activeWeapon == "pistol")
+        
+        // ACTIVE AMMO (changes depending on the equipped weapon)
+        if (activeWeapon == "pistol")
         {
             Ammo.text = bullets.ToString();
         }
 
-        else if (player.activeWeapon == "shotgun")
+        else if (activeWeapon == "shotgun")
         {
             Ammo.text = shells.ToString();
         }
@@ -90,33 +98,22 @@ public class TestUIController : MonoBehaviour
         // MenuUI.hide();  
     }*/
     
-    // This Code just Switches Around the Art for your weapon
+    // This Code just Switches Around the Art for your "active" weapon
     public void ActiveWeapon(int i)
     {
         if (i == 0)
         {
-            var tempColor = Shotgun.color;
-            tempColor.a = 0;
-            Shotgun.color = tempColor;
-          
-            var tempColor1 = Pistol.color;
-            tempColor1.a = 1;
-            Pistol.color = tempColor1;
+            Shotgun.color = new Color(Shotgun.color.r, Shotgun.color.g, Shotgun.color.b, 0.0f);
+            Pistol.color = new Color(Pistol.color.r, Pistol.color.g, Pistol.color.b, 1.0f);
         }
         else if (i == 1)
         {
-            // Shotgun.Active();
-            // Pistol.Inactive();
-            var tempColor = Shotgun.color;
-            tempColor.a = 1;
-            Shotgun.color = tempColor;
-          
-            var tempColor1 = Pistol.color;
-            tempColor1.a = 0;
-            Pistol.color = tempColor1;
+            Shotgun.color = new Color(Shotgun.color.r, Shotgun.color.g, Shotgun.color.b, 1.0f);
+            Pistol.color = new Color(Pistol.color.r, Pistol.color.g, Pistol.color.b, 0.0f);
         }
     }
-
+    
+    // Triggers a PopUp Message, which in this case is the "Shotgun Found" message.
     public void popUpMessage()
     {
         popUP.fadeIn();

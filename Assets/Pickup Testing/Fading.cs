@@ -4,52 +4,57 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+// A simple bit of code that can be placed on an object on the canvas to fade it in or out 
+// This script should be attached to any popups we want to use in the game
+
 public class Fading : MonoBehaviour
 {
-    public bool fading;
-    public bool fadingIn;
+    /* UI ELEMENT REFERENCES */
     public Image image;
-    public float alpha;
     public TextMeshProUGUI text;
     
-    // Start is called before the first frame update
+    /* FADE STATE VARIABLES */
+    public bool fadingOut; // if true, UI element has falling Alpha
+    public bool fadingIn; // if true, UI element has rising Alpha
+    private float alpha; // stores the current alpha
+    private float fadeSpeed; // stores the fade speed
+    
+    // Called when the Script is initialized
     void Start()
     {
-        image = GetComponent<Image>();
-        var tempColor = image.color;
-        tempColor.a = 0;
-        image.color = tempColor;
-
-        var tempColor2 = text.color;
-        tempColor2.a = 0;
-        text.color = tempColor2;
+        image = GetComponent<Image>(); // Grabs the image this script is attached to
         
-        alpha = image.color.a;
+        /* INITIAL VALUES */
+        alpha = 0;
+        fadeSpeed = .005f;
+        fadingOut = false;
+        fadingIn = false;
+        
+        // Sets the Alpha of the Image (and Text) to 0, making it invisible
+        setAlpha(alpha); // Sets the Alpha of the Image (and Text) to 0, making it invisible
     }
 
-    // Update is called once per frame
+    // Changes Alpha of UI Elements if "fadingOut" or "fadingIn" is true
     void FixedUpdate()
     {
-        alpha = image.color.a;
-        
-        if (fading)
+        if (fadingOut)
         {
-            alpha -= 0.005f;
-            image.color = new Color(image.color.r, image.color.g, image.color.b, alpha);
-            text.color = new Color(text.color.r, text.color.g, text.color.b, alpha);
+            alpha -= fadeSpeed; // decreases the Alpha
+            setAlpha(alpha); // Adjust UI Elements
             
+            // Checks if Alpha is at Minimum, ending the Fade Out
             if (alpha <= 0.0f)
             {
-                fading = false;
+                fadingOut = false;
             }
         }
 
         if (fadingIn)
         {
-            alpha += 0.05f;
-            image.color = new Color(image.color.r, image.color.g, image.color.b, alpha);
-            text.color = new Color(text.color.r, text.color.g, text.color.b, alpha);
+            alpha += fadeSpeed * 10; // Increases the Alpha. The 10x multiplier is for game fee;
+            setAlpha(alpha); // Adjust UI Elements
             
+            // Checks if Alpha is at Maximum
             if (alpha >= 1.0f)
             {
                 fadingIn = false;
@@ -57,17 +62,30 @@ public class Fading : MonoBehaviour
         }
     }
 
-
+    
+    // Triggers the UI Element to fade in or Out
     public void fadeOut()
     {
         fadingIn = false;
-        fading = true;
+        fadingOut = true;
     }
-
     public void fadeIn()
     {
-        fading = false;
+        fadingOut = false;
         fadingIn = true;
         alpha = 0;
+    }
+    
+    
+    /* SETTERS */
+    public void setFadeSpeed(float speed)
+    {
+        fadeSpeed = speed;
+    }
+    public void setAlpha(float a)
+    {
+        alpha = a;
+        image.color = new Color(image.color.r, image.color.g, image.color.b, alpha);
+        text.color = new Color(text.color.r, text.color.g, text.color.b, alpha);
     }
 }

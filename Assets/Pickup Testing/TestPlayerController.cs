@@ -3,24 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
 
-// This script serves as a brain for several 
+// This script serves as a brain for several different scripts, but the main three functions are:
+//       (A) Player Movement 
+//       (B) Player Inputs: Move, Shooting, Weapon Switching
+//       (C) Resource Tracking 
+// This script references two other major scripts:
+//       | TestUIController which displays all the resources tracked in this script on the UI
+//       | TestAudioController which manages audio clips that are referenced by this script
+
+/* POOP */
+// Any script with the comment "POOP" is not currently functional / implemented. 
+
 public class TestPlayerController : MonoBehaviour
 {
     
     /* REFERENCES TO OTHER SCRIPTS */
-    // public GameController game;
+    public GameController game; // POOP - Will be important but we don't have a central gameController yet
     public TestAudioController audio;
     public TestUIController UI;
     
     /* GAME STATES AND BOOLEANS */
+    // A handful of booleans and timer that track different game and player states as they get upgrades
     public bool hasShotgun;
-    // public bool paused;
+    public bool paused; // POOP
     public string activeWeapon;
-    public bool blueArmor; // Does player have Blue Armor
-    public bool greenArmor; // Does player have Green Armor
-    public float reloadTimer; // Timer the tracks 
+    public bool blueArmor; 
+    public bool greenArmor; // Tracks if player has Green Armor
+    public float reloadTimer; // Timer used for reload timer between shots 
     
     /* PLAYER RESOURCES */
+    // Tracks Ammunition, Health, and Armor uses int and float values
     public int bullets;
     public int bulletsMax;
     public int shells;
@@ -30,23 +42,26 @@ public class TestPlayerController : MonoBehaviour
     public float armor;
     public float ArmorMax;
     
-    /* Movement Variables */
-    public Rigidbody thisRigidBody; // the rigidbody we'll be moving
-    public Camera thisCamera;   // the camera
+    /* MOVEMENT */
+    public Rigidbody thisRigidBody; 
+    public Camera thisCamera;  
     public float pitch; // the mouse movement up/down
     public float yaw;   // the mouse movement left/right
     public float fpForwardBackward; // input float from  W and S keys
     public float fpStrafe;  // input float from A D keys
     public Vector3 inputVelocity;  // cumulative velocity to move character
-    public float velocityModifier;  // velocity of conroller multiplied by this number
-    float verticalLook = 0f; 
-
+    public float velocityModifier;  // velocity multiplied by this number
+    float verticalLook; 
+    
+    // Initializes values of player resources, game states, and movement
     void Start()
     {
+        /* MOVEMENT */
         thisRigidBody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         
+        /* RESOURCES */
         health = 100;
         healthMax = 100;
         armor = 0;
@@ -56,20 +71,22 @@ public class TestPlayerController : MonoBehaviour
         shells = 10;
         shellsMax = 50;
         
+        /* GAME STATES */
         hasShotgun = false;
         blueArmor = false;
         greenArmor = false;
         activeWeapon = "pistol";
-        UI.ActiveWeapon(0);
+        UI.ActiveWeapon(0); // Sets active weapon on UI to the pistol
     }
-
+    
+    // Standard FPS Movement 
     void Update()
     {
+        // Standard FPS Movement Code
         yaw = Input.GetAxis("Mouse X");
         transform.Rotate(0f, yaw, 0f);
-
-        pitch = Input.GetAxis("Mouse Y");
         
+        pitch = Input.GetAxis("Mouse Y");
         verticalLook += -pitch;
         verticalLook = Mathf.Clamp(verticalLook, -80f, 80f);
         thisCamera.transform.localEulerAngles = new Vector3(verticalLook,0f,0f);        
@@ -79,13 +96,12 @@ public class TestPlayerController : MonoBehaviour
 
         inputVelocity = transform.forward * fpForwardBackward;
         inputVelocity += transform.right * fpStrafe;
-
-        reloadTimer -= Time.deltaTime;
     }
     
     void FixedUpdate()
     {
-        /* if (paused)
+        // POOP; unused code for pause and menus
+        /*if (paused)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -96,10 +112,7 @@ public class TestPlayerController : MonoBehaviour
         }
 
         else {
-            // Movement and Camera Control
-
-       
-
+        
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 UI.OpenMenu();
@@ -108,49 +121,82 @@ public class TestPlayerController : MonoBehaviour
             }
         }*/
 
+        // Increments Timer for Reload
         if (reloadTimer > 0.0f)
         {
             reloadTimer -= Time.deltaTime;
-        }
+        } 
         
+        // Input for Firing your Weapon
         if (Input.GetKeyDown(KeyCode.Mouse0) && reloadTimer <= 0.0f)
         {
+            // Fires a different weapon based on your active weapon
             if (activeWeapon == "pistol")
             {
-                FirePistol();
+                if (bullets > 0) // Checks if you have bullets to fire
+                {
+                    audio.playClip(0); // Pistol Fire sound effect
+                    reloadTimer = .25f; // Sets a short reload timer
+                    bullets -= 1; // Increments Bullet Counter
+                    // Animation?
+                }
             }
-                
             else if (activeWeapon == "shotgun")
             {
-                FireShotgun();
+                if (shells > 0)
+                {
+                    audio.playClip(1); // Shotgun Fire sound effect
+                    reloadTimer = 0.8f; // Sets a reload timer
+                    shells -= 1; // Increments Bullet Counter
+                    // Animation
+                }
             }
         }
         
+        // Inputs to Change Weapons
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            UI.ActiveWeapon(0);
+            UI.ActiveWeapon(0); // changes visual for active weapon
             audio.playClip(4);
             activeWeapon = "pistol";
             // Animation
         }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && hasShotgun)
         {
-            UI.ActiveWeapon(1);
+            UI.ActiveWeapon(1); // changes visual for active weapon
             audio.playClip(5);
             activeWeapon = "shotgun";
             // Animation
         }
         
-        thisRigidBody.velocity = inputVelocity * velocityModifier; // Movement
+        /* APPLIES MOVEMENT */
+        thisRigidBody.velocity = inputVelocity * velocityModifier; 
         
-        UI.PlayerUpdateUI(activeWeapon, bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax);
+        /* UPDATES UI */
+        UI.PlayerUpdateUI(activeWeapon, bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax); 
     }
     
-    /* PICKUP */
+    /* PICKUPS & COLLISION */
     public void OnTriggerEnter(Collider c)
     {
-        if (c.CompareTag("Pickup"))
+        /*
+        This method parses the pickups the attached object (the player) passes through, and applies effects depending on criteria.
+        The criteria examined in this code includes:
+           (A) The NAME to determine the kind of pickup and its effect
+           (B) The RESOURCE values that determine if the pickup has any effect
+           (C) The BOOLEAN states that determine if the pickup has any effect (i.e. Blue Armor)
+        
+        If the criteria are met, the code then does any number of the following:
+           - Increments the appropriate resource.
+                  (If the associated resource is at (or close to) max capacity, it sets the resource to its maximum. This prevents overflow)
+           - Plays an audio Clip through TestAudioController
+           - Adjusts Boolean values for Player states 
+           - Makes Calls to the UI Controller
+           - Produces a Debug Log 
+           - Deactivates the item Pickup 
+         */
+        
+        if (c.CompareTag("Pickup")) 
         {
             if (c.transform.name == "Ammo Clip")
             {
@@ -162,10 +208,9 @@ public class TestPlayerController : MonoBehaviour
                 {
                     bullets += 10;
                 }
-                print("picked up Ammo Clip");
+                Debug.Log("Picked up Ammo Clip");
                 audio.playClip(2);
                 c.gameObject.SetActive(false);
-                
             }
             
             else if (c.transform.name == "Bullet Box")
@@ -178,7 +223,7 @@ public class TestPlayerController : MonoBehaviour
                 {
                     bullets += 20;
                 }
-                print("picked up Bullet Box");
+                Debug.Log("Picked up Bullet Box");
                 audio.playClip(2);
                 c.gameObject.SetActive(false);
             }
@@ -193,7 +238,7 @@ public class TestPlayerController : MonoBehaviour
                 {
                     shells += 4;
                 }
-                print("picked up Shells");
+                Debug.Log("picked up Shells");
                 audio.playClip(2);
                 c.gameObject.SetActive(false);
             }
@@ -208,7 +253,7 @@ public class TestPlayerController : MonoBehaviour
                 {
                     shells += 20;
                 }
-                print("picked up Shell Box");
+                Debug.Log("picked up Shell Box");
                 audio.playClip(2);
                 c.gameObject.SetActive(false);
             }
@@ -223,7 +268,7 @@ public class TestPlayerController : MonoBehaviour
                 {
                     health += 25;
                 }
-                print("picked up Medikit");
+                Debug.Log("picked up Medikit");
                 audio.playClip(2);
                 c.gameObject.SetActive(false);
             }
@@ -238,7 +283,7 @@ public class TestPlayerController : MonoBehaviour
                 {
                     health += 10;
                 }
-                print("picked up Stimpack");
+                Debug.Log("picked up Stimpack");
                 audio.playClip(2);
                 c.gameObject.SetActive(false);
             }
@@ -249,7 +294,7 @@ public class TestPlayerController : MonoBehaviour
                 {
                     armor += 1;
                 }
-                print("picked up Armor Bonus");
+                Debug.Log("picked up Armor Bonus");
                 audio.playClip(2);
                 c.gameObject.SetActive(false);
             }
@@ -260,7 +305,7 @@ public class TestPlayerController : MonoBehaviour
                 {
                     health += 1;
                 }
-                print("picked up Health Bonus");
+                Debug.Log("picked up Health Bonus");
                 audio.playClip(2);
                 c.gameObject.SetActive(false);
             }
@@ -271,7 +316,7 @@ public class TestPlayerController : MonoBehaviour
                 {
                     armor = 200;
                     blueArmor = true;
-                    print("picked up Blue Armor");
+                    Debug.Log("picked up Blue Armor");
                     audio.playClip(2);
                     c.gameObject.SetActive(false);
                 }
@@ -283,7 +328,7 @@ public class TestPlayerController : MonoBehaviour
                 {
                     armor = 100;
                     greenArmor = true;
-                    print("picked up Green Armor");
+                    Debug.Log("picked up Green Armor");
                     audio.playClip(2);
                     c.gameObject.SetActive(false);
                 }
@@ -292,13 +337,15 @@ public class TestPlayerController : MonoBehaviour
             else if (c.transform.name == "Shotgun")
             {
                 hasShotgun = true;
-                print("picked up Shotgun");
+                Debug.Log("picked up Shotgun");
                 UI.popUpMessage();
                 audio.playClip(1);
                 c.gameObject.SetActive(false);
             }
         }
         
+        // Simple placeholder code for registering damage from enemies and projectile objects
+        // We will replace this with Collision code on the Projectiles / Enemies, since they won't be triggers
         else if (c.CompareTag("Projectile"))
         {
             if (health > 10)
@@ -309,10 +356,10 @@ public class TestPlayerController : MonoBehaviour
             {
                 health = 0;
             }
+            Debug.Log("You took 10 damage from a projectile");
             audio.playClip(3);
             c.gameObject.SetActive(false);
         }
-        
         else if (c.CompareTag("Enemy"))
         {
             if (health > 10)
@@ -323,30 +370,9 @@ public class TestPlayerController : MonoBehaviour
             {
                 health = 0;
             }
+            Debug.Log("You took damage from touching an enemy");
             audio.playClip(3);
         }
     }
     
-    /* WEAPONS */
-    public void FirePistol()
-    {
-        if (bullets > 0)
-        {
-            audio.playClip(0);
-            reloadTimer = .25f;
-            bullets -= 1;
-            // Animation
-        }
-    }
-
-    public void FireShotgun()
-    {
-        if (shells > 0)
-        {
-            audio.playClip(1);
-            reloadTimer = 0.8f;
-            shells -= 1;
-            // Animation
-        }
-    }
 }
