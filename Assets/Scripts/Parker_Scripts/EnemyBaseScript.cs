@@ -34,6 +34,10 @@ public class EnemyBaseScript : MonoBehaviour
 
     public void Die()
     {
+        //change
+        //only destroy object if it is in the scene
+        //possibly deactivate
+        //or set to a corpse 
         Destroy(transform.gameObject);
     }
 

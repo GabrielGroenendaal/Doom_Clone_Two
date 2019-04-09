@@ -10,11 +10,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Door.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            <state relative-caret-position="187">
+              <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
               <folding>
                 <marker date="1554782141025" expanded="false" signature="6:78" ph="..." />
                 <marker date="1554782141025" expanded="true" signature="79:171" ph="/* Created By: Parker ... */" />
@@ -47,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Raycast.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+            <state relative-caret-position="253">
+              <caret line="30" column="72" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="72" />
               <folding>
                 <marker date="1554782004341" expanded="false" signature="6:78" ph="..." />
                 <marker date="1554782004341" expanded="true" signature="81:154" ph="/* Original Script (Raycast) By: Logan ... */" />
@@ -64,22 +64,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/EnemyBaseScript.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="294">
+              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
               <folding>
-                <marker date="1554783027605" expanded="false" signature="6:78" ph="..." />
-                <marker date="1554783027605" expanded="true" signature="79:120" ph="/* Created By:Parker ... */" />
-                <marker date="1554783027605" expanded="true" signature="165:916" ph="{...}" />
-                <marker date="1554783027605" expanded="true" signature="273:468" ph="{...}" />
-                <marker date="1554783027605" expanded="true" signature="487:562" ph="{...}" />
-                <marker date="1554783027605" expanded="true" signature="517:556" ph="{...}" />
-                <marker date="1554783027605" expanded="true" signature="607:707" ph="{...}" />
-                <marker date="1554783027605" expanded="true" signature="730:781" ph="{...}" />
-                <marker date="1554783027605" expanded="true" signature="811:846" ph="{...}" />
-                <marker date="1554783027605" expanded="true" signature="882:914" ph="{...}" />
+                <marker date="1554822088317" expanded="false" signature="6:78" ph="..." />
+                <marker date="1554822088317" expanded="true" signature="79:120" ph="/* Created By:Parker ... */" />
+                <marker date="1554822088317" expanded="true" signature="165:1045" ph="{...}" />
+                <marker date="1554822088317" expanded="true" signature="273:468" ph="{...}" />
+                <marker date="1554822088317" expanded="true" signature="487:562" ph="{...}" />
+                <marker date="1554822088317" expanded="true" signature="517:556" ph="{...}" />
+                <marker date="1554822088317" expanded="true" signature="607:707" ph="{...}" />
+                <marker date="1554822088317" expanded="true" signature="730:910" ph="{...}" />
+                <marker date="1554822088317" expanded="true" signature="745:865" ph="/* change ... */" />
+                <marker date="1554822088317" expanded="true" signature="940:975" ph="{...}" />
+                <marker date="1554822088317" expanded="true" signature="1011:1043" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -209,12 +210,12 @@
       <updated>1554394841645</updated>
       <workItem from="1554394850382" duration="208000" />
       <workItem from="1554395360355" duration="1148000" />
-      <workItem from="1554778973530" duration="4051000" />
+      <workItem from="1554778973530" duration="5126000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5407000" />
+    <option name="totallyTimeSpent" value="6482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -226,7 +227,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09798658" />
@@ -386,10 +387,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/EnemyBaseScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+          <folding>
+            <marker date="1554822088317" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554822088317" expanded="true" signature="79:120" ph="/* Created By:Parker ... */" />
+            <marker date="1554822088317" expanded="true" signature="165:1045" ph="{...}" />
+            <marker date="1554822088317" expanded="true" signature="273:468" ph="{...}" />
+            <marker date="1554822088317" expanded="true" signature="487:562" ph="{...}" />
+            <marker date="1554822088317" expanded="true" signature="517:556" ph="{...}" />
+            <marker date="1554822088317" expanded="true" signature="607:707" ph="{...}" />
+            <marker date="1554822088317" expanded="true" signature="730:910" ph="{...}" />
+            <marker date="1554822088317" expanded="true" signature="745:865" ph="/* change ... */" />
+            <marker date="1554822088317" expanded="true" signature="940:975" ph="{...}" />
+            <marker date="1554822088317" expanded="true" signature="1011:1043" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Raycast.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        <state relative-caret-position="253">
+          <caret line="30" column="72" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="72" />
           <folding>
             <marker date="1554782004341" expanded="false" signature="6:78" ph="..." />
             <marker date="1554782004341" expanded="true" signature="81:154" ph="/* Original Script (Raycast) By: Logan ... */" />
@@ -406,8 +427,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/Door.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        <state relative-caret-position="187">
+          <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding>
             <marker date="1554782141025" expanded="false" signature="6:78" ph="..." />
             <marker date="1554782141025" expanded="true" signature="79:171" ph="/* Created By: Parker ... */" />
@@ -415,25 +436,6 @@
             <marker date="1554782141025" expanded="true" signature="316:408" ph="{...}" />
             <marker date="1554782141025" expanded="true" signature="466:487" ph="{...}" />
             <marker date="1554782141025" expanded="true" signature="515:597" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Parker_Scripts/EnemyBaseScript.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <marker date="1554783027605" expanded="false" signature="6:78" ph="..." />
-            <marker date="1554783027605" expanded="true" signature="79:120" ph="/* Created By:Parker ... */" />
-            <marker date="1554783027605" expanded="true" signature="165:916" ph="{...}" />
-            <marker date="1554783027605" expanded="true" signature="273:468" ph="{...}" />
-            <marker date="1554783027605" expanded="true" signature="487:562" ph="{...}" />
-            <marker date="1554783027605" expanded="true" signature="517:556" ph="{...}" />
-            <marker date="1554783027605" expanded="true" signature="607:707" ph="{...}" />
-            <marker date="1554783027605" expanded="true" signature="730:781" ph="{...}" />
-            <marker date="1554783027605" expanded="true" signature="811:846" ph="{...}" />
-            <marker date="1554783027605" expanded="true" signature="882:914" ph="{...}" />
           </folding>
         </state>
       </provider>
