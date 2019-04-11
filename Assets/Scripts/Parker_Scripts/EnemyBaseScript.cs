@@ -18,13 +18,14 @@ public class EnemyBaseScript : MonoBehaviour
 
     void Update()
     {
-        if (health < 1)
+        //checks health to kill
+        if (health < 0)
         {
             Die();
         }
     }
 
-    
+    //assigns damage to object and the enemy reacts with a sound
     public void EnemyHit(float damage)
     {
         health -= damage;

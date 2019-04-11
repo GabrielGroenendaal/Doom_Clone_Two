@@ -26,6 +26,22 @@
           <e p="UIControl.cs" t="Include" />
           <e p="Zombieman.cs" t="Include" />
         </e>
+        <e p="TestScenes" t="Include">
+          <e p="Gabe_Test_Scenes" t="Include">
+            <e p="Pickup Testing" t="Include">
+              <e p="Fading.cs" t="Include" />
+              <e p="Floating.cs" t="Include" />
+              <e p="TestAudioController.cs" t="Include" />
+              <e p="TestPlayerController.cs" t="Include" />
+              <e p="TestUIController.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Parker_Test_Scenes" t="Include">
+            <e p="ZombieMovement" t="Include">
+              <e p="ZombiemenBehavior.cs" t="Include" />
+            </e>
+          </e>
+        </e>
       </e>
       <e p="Doom_Clone_Two.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
