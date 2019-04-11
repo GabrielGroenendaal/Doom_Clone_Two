@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7922690-5628-4434-9bb8-41bb0bba2351" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Doom Clone 2 - Electric Boogaloo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Doom Clone 2 - Electric Boogaloo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Pickup Testing/Fading.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pickup Testing/Fading.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Pickup Testing/Floating.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pickup Testing/Floating.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Pickup Testing/TestAudioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pickup Testing/TestAudioController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Pickup Testing/TestPlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pickup Testing/TestPlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Pickup Testing/TestUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pickup Testing/TestUIController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="b7922690-5628-4434-9bb8-41bb0bba2351" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +121,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Pickup Testing/TestPlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
@@ -230,7 +223,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Pickup Testing/TestAudioController.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -421,12 +414,12 @@
       <option name="presentableId" value="Default" />
       <updated>1554394377469</updated>
       <workItem from="1554394384545" duration="10936000" />
-      <workItem from="1554801225058" duration="13063000" />
+      <workItem from="1554801225058" duration="13663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23999000" />
+    <option name="totallyTimeSpent" value="24599000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -616,6 +609,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Pickup Testing/Floating.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="68" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
+          <folding>
+            <marker date="1554828589636" expanded="true" signature="6:92" ph="..." />
+            <marker date="1554828589636" expanded="true" signature="213:769" ph="{...}" />
+            <marker date="1554828589636" expanded="true" signature="406:489" ph="{...}" />
+            <marker date="1554828589636" expanded="true" signature="581:767" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Pickup Testing/TestUIController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="115" column="83" selection-start-line="115" selection-start-column="83" selection-end-line="115" selection-end-column="83" />
+          <folding>
+            <marker date="1554836371170" expanded="true" signature="6:113" ph="..." />
+            <marker date="1554836371170" expanded="true" signature="115:365" ph="/* This script manages the UI, updating it with information provided by the PlayerController, including: ... */" />
+            <marker date="1554836371170" expanded="true" signature="412:3522" ph="{...}" />
+            <marker date="1554836371170" expanded="true" signature="1144:1223" ph="/* public Image menuUI; ... */" />
+            <marker date="1554836371170" expanded="false" signature="1295:1501" ph="{...}" />
+            <marker date="1554836371170" expanded="true" signature="1324:1381" ph="{...}" />
+            <marker date="1554836371170" expanded="true" signature="1417:1495" ph="{...}" />
+            <marker date="1554836371170" expanded="true" signature="1814:2477" ph="{...}" />
+            <marker date="1554836371170" expanded="true" signature="2299:2363" ph="{...}" />
+            <marker date="1554836371170" expanded="true" signature="2408:2471" ph="{...}" />
+            <marker date="1554836371170" expanded="true" signature="2498:2733" ph="/* public void OpenMenu() ... */" />
+            <marker date="1554836371170" expanded="false" signature="2845:3318" ph="{...}" />
+            <marker date="1554836371170" expanded="true" signature="2871:3079" ph="{...}" />
+            <marker date="1554836371170" expanded="true" signature="3104:3312" ph="{...}" />
+            <marker date="1554836371170" expanded="true" signature="3438:3520" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Pickup Testing/TestAudioController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="103" selection-start-line="8" selection-start-column="103" selection-end-line="8" selection-end-column="103" />
+          <folding>
+            <marker date="1554828589648" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554828589648" expanded="true" signature="244:1263" ph="{...}" />
+            <marker date="1554828589648" expanded="true" signature="273:511" ph="/* These are the indexes used from the Audio Controller on the PlayerController script / gameObject ... */" />
+            <marker date="1554828589648" expanded="false" signature="679:904" ph="{...}" />
+            <marker date="1554828589648" expanded="true" signature="796:890" ph="{...}" />
+            <marker date="1554828589648" expanded="true" signature="987:1047" ph="{...}" />
+            <marker date="1554828589648" expanded="false" signature="1153:1261" ph="{...}" />
+            <marker date="1554828589648" expanded="true" signature="1206:1255" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Pickup Testing/Fading.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
@@ -695,60 +742,6 @@
             <marker date="1554828589625" expanded="true" signature="12001:12277" ph="{...}" />
             <marker date="1554828589625" expanded="true" signature="12040:12098" ph="{...}" />
             <marker date="1554828589625" expanded="true" signature="12115:12171" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Pickup Testing/Floating.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="68" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
-          <folding>
-            <marker date="1554828589636" expanded="true" signature="6:92" ph="..." />
-            <marker date="1554828589636" expanded="true" signature="213:769" ph="{...}" />
-            <marker date="1554828589636" expanded="true" signature="406:489" ph="{...}" />
-            <marker date="1554828589636" expanded="true" signature="581:767" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Pickup Testing/TestUIController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="115" column="83" selection-start-line="115" selection-start-column="83" selection-end-line="115" selection-end-column="83" />
-          <folding>
-            <marker date="1554836371170" expanded="true" signature="6:113" ph="..." />
-            <marker date="1554836371170" expanded="true" signature="115:365" ph="/* This script manages the UI, updating it with information provided by the PlayerController, including: ... */" />
-            <marker date="1554836371170" expanded="true" signature="412:3522" ph="{...}" />
-            <marker date="1554836371170" expanded="true" signature="1144:1223" ph="/* public Image menuUI; ... */" />
-            <marker date="1554836371170" expanded="false" signature="1295:1501" ph="{...}" />
-            <marker date="1554836371170" expanded="true" signature="1324:1381" ph="{...}" />
-            <marker date="1554836371170" expanded="true" signature="1417:1495" ph="{...}" />
-            <marker date="1554836371170" expanded="true" signature="1814:2477" ph="{...}" />
-            <marker date="1554836371170" expanded="true" signature="2299:2363" ph="{...}" />
-            <marker date="1554836371170" expanded="true" signature="2408:2471" ph="{...}" />
-            <marker date="1554836371170" expanded="true" signature="2498:2733" ph="/* public void OpenMenu() ... */" />
-            <marker date="1554836371170" expanded="false" signature="2845:3318" ph="{...}" />
-            <marker date="1554836371170" expanded="true" signature="2871:3079" ph="{...}" />
-            <marker date="1554836371170" expanded="true" signature="3104:3312" ph="{...}" />
-            <marker date="1554836371170" expanded="true" signature="3438:3520" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Pickup Testing/TestAudioController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="103" selection-start-line="8" selection-start-column="103" selection-end-line="8" selection-end-column="103" />
-          <folding>
-            <marker date="1554828589648" expanded="false" signature="6:78" ph="..." />
-            <marker date="1554828589648" expanded="true" signature="244:1263" ph="{...}" />
-            <marker date="1554828589648" expanded="true" signature="273:511" ph="/* These are the indexes used from the Audio Controller on the PlayerController script / gameObject ... */" />
-            <marker date="1554828589648" expanded="false" signature="679:904" ph="{...}" />
-            <marker date="1554828589648" expanded="true" signature="796:890" ph="{...}" />
-            <marker date="1554828589648" expanded="true" signature="987:1047" ph="{...}" />
-            <marker date="1554828589648" expanded="false" signature="1153:1261" ph="{...}" />
-            <marker date="1554828589648" expanded="true" signature="1206:1255" ph="{...}" />
           </folding>
         </state>
       </provider>
