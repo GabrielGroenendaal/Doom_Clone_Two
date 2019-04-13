@@ -56,31 +56,33 @@ public class TestUIController : MonoBehaviour
 
     /* PLAYER UPDATE */
     // This code takes all the values provided by the TestPlayerController and translates them to the UI Overlay
+    
     public void PlayerUpdateUI(string activeWeapon, int bullets, int bulletMax, int shells, int shellsMax, float health, float healthMax,
         float armor, float armorMax)
     {
         // HEALTH
         var healthPercent = (health / healthMax) * 100; 
-        Health.text = healthPercent + "%";
+//        Health.text = healthPercent + "%";
         
         // ARMOR
         var armorPercent = (armor / armorMax) * 100; 
-        Armor.text = armorPercent + "%";
+        //Armor.text = armorPercent + "%";
         
         // AMMO
-        Bullets.text = bullets + " / " + bulletMax;
-        Shells.text = shells + " / " + shellsMax;
+        //Bullets.text = bullets + " / " + bulletMax;
+        //Shells.text = shells + " / " + shellsMax;
         
         // ACTIVE AMMO (changes depending on the equipped weapon)
         if (activeWeapon == "pistol")
         {
-            Ammo.text = bullets.ToString();
+            //Ammo.text = bullets.ToString();
         }
 
         else if (activeWeapon == "shotgun")
         {
-            Ammo.text = shells.ToString();
+            //Ammo.text = shells.ToString();
         }
+        
     }
 
     /* MENU */

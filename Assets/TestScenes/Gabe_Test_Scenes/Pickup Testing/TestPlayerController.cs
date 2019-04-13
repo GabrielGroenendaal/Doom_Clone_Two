@@ -53,9 +53,16 @@ public class TestPlayerController : MonoBehaviour
     public float velocityModifier;  // velocity multiplied by this number
     float verticalLook; 
     
+    /*HITSCAN CODE*/
+    public GameObject camera;
+    public Raycast ray;
+    
     // Initializes values of player resources, game states, and movement
     void Start()
     {
+        /**/
+        
+        
         /* MOVEMENT */
         thisRigidBody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -138,6 +145,7 @@ public class TestPlayerController : MonoBehaviour
                     audio.playClip(0); // Pistol Fire sound effect
                     reloadTimer = .25f; // Sets a short reload timer
                     bullets -= 1; // Increments Bullet Counter
+                    ray.HitScanFire();
                     // Animation?
                 }
             }
