@@ -42,6 +42,7 @@ public class TestPlayerController : MonoBehaviour
     public float armor;
     public float ArmorMax;
     
+<<<<<<< HEAD:Assets/TestScenes/Gabe_Test_Scenes/Pickup Testing/TestPlayerController.cs
     /* MOVEMENT */
     public Rigidbody thisRigidBody; 
     public Camera thisCamera;  
@@ -57,6 +58,8 @@ public class TestPlayerController : MonoBehaviour
     public GameObject camera;
     public Raycast ray;
     
+=======
+>>>>>>> origin/Gabes_Coding_Adventure:Assets/Pickup Testing/TestPlayerController.cs
     // Initializes values of player resources, game states, and movement
     void Start()
     {
@@ -85,6 +88,17 @@ public class TestPlayerController : MonoBehaviour
         activeWeapon = "pistol";
         UI.ActiveWeapon(0); // Sets active weapon on UI to the pistol
     }
+    /* MOVEMENT */
+    public Rigidbody thisRigidBody; 
+    public Camera thisCamera;  
+    public float pitch; // the mouse movement up/down
+    public float yaw;   // the mouse movement left/right
+    public float fpForwardBackward; // input float from  W and S keys
+    public float fpStrafe;  // input float from A D keys
+    public Vector3 inputVelocity;  // cumulative velocity to move character
+    public float velocityModifier;  // velocity multiplied by this number
+    float verticalLook; 
+    
     
     // Standard FPS Movement 
     void Update()
