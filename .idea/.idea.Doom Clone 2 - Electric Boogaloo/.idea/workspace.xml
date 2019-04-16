@@ -373,10 +373,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="32" />
-    <option name="y" value="101" />
+    <option name="x" value="7" />
     <option name="width" value="1920" />
-    <option name="height" value="1059" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator currentView="UnityExplorer" proportions="" version="1">
@@ -436,12 +435,12 @@
       <option name="presentableId" value="Default" />
       <updated>1554394377469</updated>
       <workItem from="1554394384545" duration="10936000" />
-      <workItem from="1554801225058" duration="15582000" />
+      <workItem from="1554801225058" duration="16179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26518000" />
+    <option name="totallyTimeSpent" value="27115000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -453,7 +452,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="26" y="81" width="1536" height="847" extended-state="0" />
+    <frame x="6" y="0" width="1536" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25338754" />
