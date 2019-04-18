@@ -24,14 +24,16 @@ public class TestUIController : MonoBehaviour
     public float timer;
 
     /* GAME UI ELEMENTS */
+    //public GameObject Canvas;
+    //Currently Empty!
     public Image GameUI; 
-    public RawImage Shotgun;
-    public RawImage Pistol;
-    public TextMeshProUGUI Health;
-    public TextMeshProUGUI Armor;
-    public TextMeshProUGUI Ammo;
-    public TextMeshProUGUI Bullets;
-    public TextMeshProUGUI Shells;
+    public RawImage ShotgunImage;
+    public RawImage PistolImage;
+    public TextMeshProUGUI HealthPercentage;
+    public TextMeshProUGUI ArmorPercentage;
+    public TextMeshProUGUI AmmoNumber;
+    public TextMeshProUGUI BulletsAmount;
+    public TextMeshProUGUI ShellsAmount;
 
     // We don't have a menu UI set up yet
     /* MENU UI ELEMENTS */
@@ -40,6 +42,19 @@ public class TestUIController : MonoBehaviour
     public Button button2;*/
 
     // Increments the timer and triggers the FadeOut
+    void Start()
+    {
+        //skipping GameUI
+        ShotgunImage = GameObject.Find("Shotgun Image").GetComponent<RawImage>();
+        PistolImage = GameObject.Find("Pistol Image").GetComponent<RawImage>();
+        HealthPercentage = GameObject.Find("Health Percentage").GetComponent<TextMeshProUGUI>();
+        ArmorPercentage = GameObject.Find("Armor Percentage").GetComponent<TextMeshProUGUI>();
+        AmmoNumber = GameObject.Find("Ammo Number").GetComponent<TextMeshProUGUI>();
+        BulletsAmount = GameObject.Find("Bullet Count").GetComponent<TextMeshProUGUI>();
+        ShellsAmount = GameObject.Find("Shell Count").GetComponent<TextMeshProUGUI>();
+
+
+    }
     void Update()
     {
         if (timer > 0)
@@ -62,25 +77,26 @@ public class TestUIController : MonoBehaviour
     {
         // HEALTH
         var healthPercent = (health / healthMax) * 100; 
-//        Health.text = healthPercent + "%";
+        HealthPercentage.text = healthPercent + "%";
         
-        // ARMOR
-        var armorPercent = (armor / armorMax) * 100; 
-        //Armor.text = armorPercent + "%";
+        //ARMORor / armorMax) * 100; 
+        var armorPercent = (armor + "%");
+        ArmorPercentage.text = armorPercent;
+
         
         // AMMO
-        //Bullets.text = bullets + " / " + bulletMax;
-        //Shells.text = shells + " / " + shellsMax;
+        BulletsAmount.text = bullets + " / " + bulletMax;
+        ShellsAmount.text = shells + " / " + shellsMax;
         
         // ACTIVE AMMO (changes depending on the equipped weapon)
         if (activeWeapon == "pistol")
         {
-            //Ammo.text = bullets.ToString();
+            AmmoNumber.text = bullets.ToString();
         }
 
         else if (activeWeapon == "shotgun")
         {
-            //Ammo.text = shells.ToString();
+            AmmoNumber.text = shells.ToString();
         }
         
     }
@@ -105,13 +121,13 @@ public class TestUIController : MonoBehaviour
     {
         if (i == 0)
         {
-            Shotgun.color = new Color(Shotgun.color.r, Shotgun.color.g, Shotgun.color.b, 0.0f);
-            Pistol.color = new Color(Pistol.color.r, Pistol.color.g, Pistol.color.b, 1.0f);
+            ShotgunImage.color = new Color(ShotgunImage.color.r, ShotgunImage.color.g, ShotgunImage.color.b, 0.0f);
+            PistolImage.color = new Color(PistolImage.color.r, PistolImage.color.g, PistolImage.color.b, 1.0f);
         }
         else if (i == 1)
         {
-            Shotgun.color = new Color(Shotgun.color.r, Shotgun.color.g, Shotgun.color.b, 1.0f);
-            Pistol.color = new Color(Pistol.color.r, Pistol.color.g, Pistol.color.b, 0.0f);
+            ShotgunImage.color = new Color(ShotgunImage.color.r, ShotgunImage.color.g, ShotgunImage.color.b, 1.0f);
+            PistolImage.color = new Color(PistolImage.color.r, PistolImage.color.g, PistolImage.color.b, 0.0f);
         }
     }
     

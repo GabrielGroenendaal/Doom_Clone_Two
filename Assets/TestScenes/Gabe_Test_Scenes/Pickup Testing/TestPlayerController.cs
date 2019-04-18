@@ -54,7 +54,7 @@ public class TestPlayerController : MonoBehaviour
     float verticalLook; 
     
     /*HITSCAN CODE*/
-    public GameObject camera;
+
     public Raycast ray;
 
     // Initializes values of player resources, game states, and movement
