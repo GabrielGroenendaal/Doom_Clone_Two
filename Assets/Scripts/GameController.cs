@@ -28,6 +28,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         gameState = "main menu";
+        playerPrefab = GameObject.Find("Player");
+        gameObject.name = "Game Controller";
     }
 
 
