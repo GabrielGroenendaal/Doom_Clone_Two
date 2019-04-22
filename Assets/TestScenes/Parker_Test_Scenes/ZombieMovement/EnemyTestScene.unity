@@ -629,6 +629,40 @@ MonoBehaviour:
   hitScanRange: 100
   doorRange: 3
   damage: 1
+--- !u!95 &834642282
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834642277}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6af0532dc4e498448b26b07bf9488185, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &834642283
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834642277}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a4bae418cb1b8124991409c7fa82c9fd, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &1235360956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -640,6 +674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221924759465918987, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2221924759207063090, guid: b2616197f78cebf4ca97951288a3ce51,
         type: 3}
@@ -706,6 +745,11 @@ PrefabInstance:
       propertyPath: ray
       value: 
       objectReference: {fileID: 834642281}
+    - target: {fileID: 2221924759207063086, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: head_bobbing
+      value: 
+      objectReference: {fileID: 834642282}
     - target: {fileID: 2221924759207063091, guid: b2616197f78cebf4ca97951288a3ce51,
         type: 3}
       propertyPath: Loop
