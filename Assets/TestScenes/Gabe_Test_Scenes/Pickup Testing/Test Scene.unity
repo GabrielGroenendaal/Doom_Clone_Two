@@ -3205,7 +3205,7 @@ GameObject:
   - component: {fileID: 648030223}
   m_Layer: 0
   m_Name: Pickups
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6099,7 +6099,8 @@ MonoBehaviour:
   fpStrafe: 0
   inputVelocity: {x: 0, y: 0, z: 0}
   velocityModifier: 5
-  ray: {fileID: 1707625260}
+  camera: {fileID: 0}
+  ray: {fileID: 0}
 --- !u!65 &1450862351
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7432,7 +7433,6 @@ GameObject:
   - component: {fileID: 1707625259}
   - component: {fileID: 1707625258}
   - component: {fileID: 1707625257}
-  - component: {fileID: 1707625260}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7504,21 +7504,6 @@ Transform:
   m_Father: {fileID: 1450862354}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1707625260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707625256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1460b750b35ea714b92973dfad44bf45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitScanRange: 100
-  doorRange: 3
-  damage: 1
 --- !u!4 &1725645112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
