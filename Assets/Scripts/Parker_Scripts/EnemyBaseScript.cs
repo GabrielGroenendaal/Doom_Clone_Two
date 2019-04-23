@@ -51,4 +51,9 @@ public class EnemyBaseScript : MonoBehaviour
     {
         health = h;
     }
+
+    public void sound()
+    {
+        sfxPlayer.PlayOneShot(sfx);
+    }
 }

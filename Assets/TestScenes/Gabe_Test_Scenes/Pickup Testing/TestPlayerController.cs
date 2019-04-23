@@ -382,5 +382,17 @@ public class TestPlayerController : MonoBehaviour
             audio.playClip(3);
         }
     }
-    
+
+    public void Damage(float d)
+    {
+        Debug.Log(d);
+        if (health > d)
+        {
+            health -= d;
+        }
+        else
+        {
+            health = 0;
+        }
+    }
 }
