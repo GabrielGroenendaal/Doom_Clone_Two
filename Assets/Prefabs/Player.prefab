@@ -304,13 +304,13 @@ MonoBehaviour:
   fadeOut: 0
   timer: 0
   GameUI: {fileID: 0}
-  Shotgun: {fileID: 0}
-  Pistol: {fileID: 0}
-  Health: {fileID: 0}
-  Armor: {fileID: 0}
-  Ammo: {fileID: 0}
-  Bullets: {fileID: 0}
-  Shells: {fileID: 0}
+  ShotgunImage: {fileID: 0}
+  PistolImage: {fileID: 0}
+  HealthPercentage: {fileID: 0}
+  ArmorPercentage: {fileID: 0}
+  AmmoNumber: {fileID: 0}
+  BulletsAmount: {fileID: 0}
+  ShellsAmount: {fileID: 0}
 --- !u!1 &2221924758357603113
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 2221924759207063091}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -609,8 +609,9 @@ MonoBehaviour:
   fpStrafe: 0
   inputVelocity: {x: 0, y: 0, z: 0}
   velocityModifier: 5
-  camera: {fileID: 0}
   ray: {fileID: 0}
+  camera: {fileID: 0}
+  head_bobbing: {fileID: 0}
 --- !u!54 &2221924759207063085
 Rigidbody:
   m_ObjectHideFlags: 0

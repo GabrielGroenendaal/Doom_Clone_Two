@@ -42,10 +42,6 @@ public class TestPlayerController : MonoBehaviour
     public float armor;
     public float ArmorMax;
     
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/Gabes_Coding_Adventure
     /* MOVEMENT */
     public Rigidbody thisRigidBody; 
     public Camera thisCamera;  
@@ -60,15 +56,12 @@ public class TestPlayerController : MonoBehaviour
     /*HITSCAN CODE*/
 
     public Raycast ray;
-<<<<<<< HEAD
+    public GameObject camera;
 
     /*ANIMATION*/
     public Animator head_bobbing;
     //public float animSpeed = 0f; POOP - Is currently not implemented
 
-=======
-    
->>>>>>> origin/Gabes_Coding_Adventure
     // Initializes values of player resources, game states, and movement
     void Start()
     {
@@ -96,16 +89,13 @@ public class TestPlayerController : MonoBehaviour
         greenArmor = false;
         activeWeapon = "pistol";
         UI.ActiveWeapon(0); // Sets active weapon on UI to the pistol
+        camera = thisCamera.gameObject;
 
         /*ANIMATION*/
         head_bobbing = camera.GetComponent<Animator>();
 
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/Gabes_Coding_Adventure
     // Standard FPS Movement 
     void Update()
     {

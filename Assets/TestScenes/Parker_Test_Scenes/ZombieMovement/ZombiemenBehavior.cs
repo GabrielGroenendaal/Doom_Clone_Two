@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class ZombiemenBehavior : MonoBehaviour
 {
@@ -227,6 +228,7 @@ public class ZombiemenBehavior : MonoBehaviour
     {
         RaycastHit hit;
         Debug.Log("Enemy Fired");
+        Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.forward)*range, Color.yellow);
         
         if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range) && hit.collider.tag == "Player")
         {
