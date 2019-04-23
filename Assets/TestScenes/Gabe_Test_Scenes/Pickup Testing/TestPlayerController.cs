@@ -57,6 +57,10 @@ public class TestPlayerController : MonoBehaviour
 
     public Raycast ray;
 
+    /*ANIMATION*/
+    public Animator head_bobbing;
+    //public float animSpeed = 0f; POOP - Is currently not implemented
+
     // Initializes values of player resources, game states, and movement
     void Start()
     {
@@ -84,6 +88,10 @@ public class TestPlayerController : MonoBehaviour
         greenArmor = false;
         activeWeapon = "pistol";
         UI.ActiveWeapon(0); // Sets active weapon on UI to the pistol
+
+        /*ANIMATION*/
+        head_bobbing = camera.GetComponent<Animator>();
+
     }
 
     // Standard FPS Movement 
@@ -181,7 +189,10 @@ public class TestPlayerController : MonoBehaviour
         thisRigidBody.velocity = inputVelocity * velocityModifier; 
         
         /* UPDATES UI */
-        UI.PlayerUpdateUI(activeWeapon, bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax); 
+        UI.PlayerUpdateUI(activeWeapon, bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax);
+
+        /*ANIMATION FOR HEAD BOBBING*/
+         head_bobbing.speed = fpForwardBackward;
     }
     
     /* PICKUPS & COLLISION */
