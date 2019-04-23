@@ -11,10 +11,10 @@ using UnityEngine.UI;
 //    (D) Armor Percentage
 //    (E) Equipped Weapon
 
-public class TestUIController : MonoBehaviour
+public class UIController : MonoBehaviour
 {
     /* SCRIPT REFERENCES */
-    public TestPlayerController player;
+    public PlayerController player;
     public Fading popUP;
     public GameController game;
 
@@ -52,7 +52,6 @@ public class TestUIController : MonoBehaviour
         AmmoNumber = GameObject.Find("Ammo Number").GetComponent<TextMeshProUGUI>();
         BulletsAmount = GameObject.Find("Bullet Count").GetComponent<TextMeshProUGUI>();
         ShellsAmount = GameObject.Find("Shell Count").GetComponent<TextMeshProUGUI>();
-
 
     }
     void Update()

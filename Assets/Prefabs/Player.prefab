@@ -609,9 +609,9 @@ MonoBehaviour:
   fpStrafe: 0
   inputVelocity: {x: 0, y: 0, z: 0}
   velocityModifier: 5
-  ray: {fileID: 0}
-  camera: {fileID: 0}
-  head_bobbing: {fileID: 0}
+  ray: {fileID: 834642281}
+  camera: {fileID: 2221924759465918984}
+  head_bobbing: {fileID: 834642282}
 --- !u!54 &2221924759207063085
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -626,7 +626,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &2221924759207063087
 BoxCollider:
@@ -652,10 +652,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d8855cce397797341a5d6e525da53c78, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1129,6 +1129,9 @@ GameObject:
   - component: {fileID: 2221924759465918987}
   - component: {fileID: 2221924759465918986}
   - component: {fileID: 2221924759465918985}
+  - component: {fileID: 834642283}
+  - component: {fileID: 834642282}
+  - component: {fileID: 834642281}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1146,7 +1149,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 564745888}
   m_Father: {fileID: 2221924759207063090}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1200,3 +1204,131 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2221924759465918984}
   m_Enabled: 1
+--- !u!111 &834642283
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221924759465918984}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a4bae418cb1b8124991409c7fa82c9fd, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &834642282
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221924759465918984}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6af0532dc4e498448b26b07bf9488185, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &834642281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2221924759465918984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1460b750b35ea714b92973dfad44bf45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitScanRange: 100
+  doorRange: 3
+  damage: 1
+--- !u!1001 &565136416
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2221924759465918987}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_Name
+      value: DoomPistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.017749786
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.16099977
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.65917206
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.49689186
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.50992835
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.488538
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5043831
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -88.164
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -115.618004
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 25.779001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5779061
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.577906
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5779066
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97df3aca9eed9774fbaaf533aa30a2c2, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 074a45bffc7abbb4ba890357dda62763, type: 3}
+--- !u!4 &564745888 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 074a45bffc7abbb4ba890357dda62763,
+    type: 3}
+  m_PrefabInstance: {fileID: 565136416}
+  m_PrefabAsset: {fileID: 0}

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trooper : MonoBehaviour
+public class ImpProjectile : MonoBehaviour
 {
+    public float speed; 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class Trooper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
