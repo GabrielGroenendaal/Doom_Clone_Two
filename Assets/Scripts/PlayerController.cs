@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
+using System;
 
 // This script serves as a brain for several different scripts, but the main three functions are:
 //       (A) Player Movement 
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private bool hasShotgun;
     private bool paused; // POOP
     private string activeWeapon;
-    private bool blueArmor; 
+    public bool blueArmor; 
     private bool greenArmor; // Tracks if player has Green Armor
     private float reloadTimer; // Timer used for reload timer between shots 
     
@@ -37,9 +38,9 @@ public class PlayerController : MonoBehaviour
     private int bulletsMax;
     public int shells;
     private int shellsMax;
-    private float health;
+    public float health;
     private float healthMax;
-    private float armor;
+    public float armor;
     private float ArmorMax;
     
     /* MOVEMENT */
@@ -121,27 +122,6 @@ public class PlayerController : MonoBehaviour
     
     void FixedUpdate()
     {
-        // POOP; unused code for pause and menus
-        /*if (paused)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                UI.CloseMenu();
-                game.Unpause();
-                paused = false;
-            }
-        }
-
-        else {
-        
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                UI.OpenMenu();
-                game.Pause();
-                paused = true;
-            }
-        }*/
-
         // Increments Timer for Reload
         if (reloadTimer > 0.0f)
         {
@@ -373,28 +353,14 @@ public class PlayerController : MonoBehaviour
         // We will replace this with Collision code on the Projectiles / Enemies, since they won't be triggers
         else if (c.CompareTag("Projectile"))
         {
-            if (health > 10)
-            {
-                health -= 10;
-            }
-            else
-            {
-                health = 0;
-            }
-            Debug.Log("You took 10 damage from a projectile");
+            Damage(10);
+            Debug.Log("You took damage from a projectile");
             audio.playClip(3);
             c.gameObject.SetActive(false);
         }
         else if (c.CompareTag("Enemy"))
         {
-            if (health > 10)
-            {
-                health -= 10;
-            }
-            else
-            {
-                health = 0;
-            }
+            Damage(10);
             Debug.Log("You took damage from touching an enemy");
             audio.playClip(3);
         }
@@ -402,13 +368,38 @@ public class PlayerController : MonoBehaviour
 
     public void Damage(float d)
     {
-        Debug.Log(d);
-        if (health > d)
+        Debug.Log("Initial Damage Taken:" + d); 
+        
+        if (blueArmor)
         {
-            health -= d;
+            d = Mathf.Floor(d / 2);
+        }
+
+        if (greenArmor)
+        {
+            d = Mathf.Floor((d * 2) / 3);
+        }
+        
+        Debug.Log("Modified Damage Taken (Armor): " + d);
+        
+        if (armor > d)
+        {
+            armor -= d;
         }
         else
         {
+            float difference = d - armor;
+            armor = 0;
+
+            if (health > difference)
+            {
+                health -= difference;
+            }
+            else
+            {
+                health = 0;
+                
+            }
             health = 0;
         }
     }
