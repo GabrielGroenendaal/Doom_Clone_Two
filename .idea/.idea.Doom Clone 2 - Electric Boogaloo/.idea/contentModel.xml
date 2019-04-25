@@ -12,15 +12,13 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AudioController.cs" t="Include" />
           <e p="Gabe Scripts" t="Include">
-            <e p="AudioController.cs" t="Include" />
             <e p="Fading.cs" t="Include" />
             <e p="Floating.cs" t="Include" />
-            <e p="GameController.cs" t="Include" />
             <e p="ImpProjectile.cs" t="Include" />
-            <e p="PlayerController.cs" t="Include" />
-            <e p="UIController.cs" t="Include" />
           </e>
+          <e p="GameController.cs" t="Include" />
           <e p="Logan_Scripts" t="Include">
             <e p="Player_Move_FP_original.cs" t="Include" />
             <e p="Raycast_original.cs" t="Include" />
@@ -31,6 +29,8 @@
             <e p="Player_Move_FP.cs" t="Include" />
             <e p="Raycast.cs" t="Include" />
           </e>
+          <e p="PlayerController.cs" t="Include" />
+          <e p="UIController.cs" t="Include" />
         </e>
         <e p="Testing Scene" t="Include">
           <e p="Parker_Test_Scenes" t="Include">

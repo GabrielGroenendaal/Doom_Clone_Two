@@ -24,34 +24,34 @@ public class PlayerController : MonoBehaviour
     
     /* GAME STATES AND BOOLEANS */
     // A handful of booleans and timer that track different game and player states as they get upgrades
-    public bool hasShotgun;
-    public bool paused; // POOP
-    public string activeWeapon;
-    public bool blueArmor; 
-    public bool greenArmor; // Tracks if player has Green Armor
-    public float reloadTimer; // Timer used for reload timer between shots 
+    private bool hasShotgun;
+    private bool paused; // POOP
+    private string activeWeapon;
+    private bool blueArmor; 
+    private bool greenArmor; // Tracks if player has Green Armor
+    private float reloadTimer; // Timer used for reload timer between shots 
     
     /* PLAYER RESOURCES */
     // Tracks Ammunition, Health, and Armor uses int and float values
     public int bullets;
-    public int bulletsMax;
+    private int bulletsMax;
     public int shells;
-    public int shellsMax;
-    public float health;
-    public float healthMax;
-    public float armor;
-    public float ArmorMax;
+    private int shellsMax;
+    private float health;
+    private float healthMax;
+    private float armor;
+    private float ArmorMax;
     
     /* MOVEMENT */
-    public Rigidbody thisRigidBody; 
+    private Rigidbody thisRigidBody; 
     public Camera thisCamera;  
-    public float pitch; // the mouse movement up/down
-    public float yaw;   // the mouse movement left/right
-    public float fpForwardBackward; // input float from  W and S keys
-    public float fpStrafe;  // input float from A D keys
-    public Vector3 inputVelocity;  // cumulative velocity to move character
+    private float pitch; // the mouse movement up/down
+    private float yaw;   // the mouse movement left/right
+    private float fpForwardBackward; // input float from  W and S keys
+    private float fpStrafe;  // input float from A D keys
+    private Vector3 inputVelocity;  // cumulative velocity to move character
     public float velocityModifier;  // velocity multiplied by this number
-    float verticalLook; 
+    private float verticalLook; 
     
     /*HITSCAN CODE*/
 
@@ -112,6 +112,11 @@ public class PlayerController : MonoBehaviour
 
         inputVelocity = transform.forward * fpForwardBackward;
         inputVelocity += transform.right * fpStrafe;
+
+        if (health <= 0)
+        {
+            game.GameOver();
+        }
     }
     
     void FixedUpdate()
@@ -407,4 +412,15 @@ public class PlayerController : MonoBehaviour
             health = 0;
         }
     }
+    
+    /* GETTERS AND SETTERS */
+    public void SetHealth(float f) { health = f;}
+    public void SetArmor(float f) { armor = f;}
+    public void SetBullets(int f) { bullets = f;}
+    public void SetShells(int f) { shells = f;}
+    public float GetHealth() { return health;}
+    public float GetArmor() { return armor;}
+    public int GetBullets() { return bullets;}
+    public int GetShells() { return shells;}
+
 }

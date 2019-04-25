@@ -17,4 +17,12 @@ public class ImpProjectile : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
+
+    void OnCollisionEnter(Collision c)
+    {
+        if (!c.gameObject.CompareTag("player") && !c.gameObject.CompareTag("enemy") && !c.gameObject.CompareTag("Pickup"))
+        {
+            transform.gameObject.SetActive(false);
+        }
+    }
 }
