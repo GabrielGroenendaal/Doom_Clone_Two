@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// A broadly useful script for storing and accessing large numbers of AudioSources by organizing them into an Array
 public class AudioController : MonoBehaviour
 {
-    /* PLAYER AUDIO CLIPS */
-    // 1: Damage Taken
-    // 2: Pickup Item
-    // 3: Shotgun Fire
-    // 4: Pistol Fire
-    // 5: Open/Close Menu
-    // 6: Button Push
+    /* AUDIO CLIPS */
+    // These are the indexes used from the Audio Controller on the PlayerController script / gameObject
+    // 0: Pistol Shot
+    // 1: Shotgun Shot
+    // 2: Item Pickup
+    // 3: Damage Taken
+    // 4: Pistol Reload
+    // 5: Shotgun Reload
+
     
-    public AudioSource[] clips;
+    public AudioSource[] clips; // Stores the AudioSources
     
+    // Populates the array with AudioSources from the children of the GameObject
     void Start()
     {
         clips = new AudioSource[transform.childCount];
@@ -24,19 +28,15 @@ public class AudioController : MonoBehaviour
         }
        
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
+    // Plays the Clip pointed to by the Index
     public void playClip(int i)
     {
         endAllClips();
         clips[i].Play();
     }
     
+    // Ends all clips to prevent awkward overlap. May not be necessary
     public void endAllClips()
     {
         for (int i = 0; i < clips.Length; i++)

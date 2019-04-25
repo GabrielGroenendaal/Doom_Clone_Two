@@ -6,7 +6,7 @@ using Random = System.Random;
 
 public class ZombiemenBehavior : MonoBehaviour
 {
-    //enemy info
+    /* ENEMY INFO */
     public float health = 20;
     public float damage = 10;
     public float sightRange = 50;
@@ -32,9 +32,11 @@ public class ZombiemenBehavior : MonoBehaviour
 
     public float wallTime = 1;
     
+    /* REFERENCES */
     public EnemyBaseScript enemyScript;
     public GameObject player;
-    public TestPlayerController playerScript;
+    public PlayerController playerScript;
+    public GameObject projectile;
     
     //debug booleans
     public Boolean debug = false;
@@ -44,7 +46,7 @@ public class ZombiemenBehavior : MonoBehaviour
         gameObject.name = "Zombieman";
         enemyScript.setHealth(health);
         player = GameObject.Find("Player");
-        playerScript = player.GetComponent<TestPlayerController>();
+        playerScript = player.GetComponent<PlayerController>();
     }
     
     void Update()
@@ -113,7 +115,8 @@ public class ZombiemenBehavior : MonoBehaviour
         {
             if (distance < sightRange)
             {
-                FireScan();
+                //FireScan();
+                FireProjectile();
                 shot = true;
                 if (debug)
                 {
@@ -222,8 +225,7 @@ public class ZombiemenBehavior : MonoBehaviour
         Vector3 newpos = new Vector3(player.transform.position.x,transform.position.y,player.transform.position.z );
         return newpos;
     }
-    
-        
+          
     public void FireScan()
     {
         RaycastHit hit;
@@ -236,5 +238,13 @@ public class ZombiemenBehavior : MonoBehaviour
             enemyScript.sound();
             playerScript.Damage(damage);
         }
+    }
+
+    public void FireProjectile()
+    {
+        Vector3 bop = transform.position;
+        GameObject projectileShot = Instantiate(projectile,bop,Quaternion.identity);
+        projectileShot.transform.LookAt(player.transform);
+        Debug.Log("Enemy Fired");
     }
 }
