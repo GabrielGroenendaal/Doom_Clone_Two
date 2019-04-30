@@ -52,8 +52,9 @@ public class UIController : MonoBehaviour
         AmmoNumber = GameObject.Find("Ammo Number").GetComponent<TextMeshProUGUI>();
         BulletsAmount = GameObject.Find("Bullet Count").GetComponent<TextMeshProUGUI>();
         ShellsAmount = GameObject.Find("Shell Count").GetComponent<TextMeshProUGUI>();
-
+        popUP = GameObject.Find("Popup").GetComponent<Fading>();
     }
+    
     void Update()
     {
         if (timer > 0)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
+using System;
 
 // This script serves as a brain for several different scripts, but the main three functions are:
 //       (A) Player Movement 
@@ -24,34 +25,34 @@ public class PlayerController : MonoBehaviour
     
     /* GAME STATES AND BOOLEANS */
     // A handful of booleans and timer that track different game and player states as they get upgrades
-    public bool hasShotgun;
-    public bool paused; // POOP
-    public string activeWeapon;
+    private bool hasShotgun;
+    private bool paused; // POOP
+    private string activeWeapon;
     public bool blueArmor; 
-    public bool greenArmor; // Tracks if player has Green Armor
-    public float reloadTimer; // Timer used for reload timer between shots 
+    private bool greenArmor; // Tracks if player has Green Armor
+    private float reloadTimer; // Timer used for reload timer between shots 
     
     /* PLAYER RESOURCES */
     // Tracks Ammunition, Health, and Armor uses int and float values
     public int bullets;
-    public int bulletsMax;
+    private int bulletsMax;
     public int shells;
-    public int shellsMax;
+    private int shellsMax;
     public float health;
-    public float healthMax;
+    private float healthMax;
     public float armor;
-    public float ArmorMax;
+    private float ArmorMax;
     
     /* MOVEMENT */
-    public Rigidbody thisRigidBody; 
+    private Rigidbody thisRigidBody; 
     public Camera thisCamera;  
-    public float pitch; // the mouse movement up/down
-    public float yaw;   // the mouse movement left/right
-    public float fpForwardBackward; // input float from  W and S keys
-    public float fpStrafe;  // input float from A D keys
-    public Vector3 inputVelocity;  // cumulative velocity to move character
+    private float pitch; // the mouse movement up/down
+    private float yaw;   // the mouse movement left/right
+    private float fpForwardBackward; // input float from  W and S keys
+    private float fpStrafe;  // input float from A D keys
+    private Vector3 inputVelocity;  // cumulative velocity to move character
     public float velocityModifier;  // velocity multiplied by this number
-    float verticalLook; 
+    private float verticalLook; 
     
     /*HITSCAN CODE*/
 
@@ -112,31 +113,15 @@ public class PlayerController : MonoBehaviour
 
         inputVelocity = transform.forward * fpForwardBackward;
         inputVelocity += transform.right * fpStrafe;
+
+        if (health <= 0)
+        {
+            game.GameOver();
+        }
     }
     
     void FixedUpdate()
     {
-        // POOP; unused code for pause and menus
-        /*if (paused)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                UI.CloseMenu();
-                game.Unpause();
-                paused = false;
-            }
-        }
-
-        else {
-        
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                UI.OpenMenu();
-                game.Pause();
-                paused = true;
-            }
-        }*/
-
         // Increments Timer for Reload
         if (reloadTimer > 0.0f)
         {
@@ -368,28 +353,14 @@ public class PlayerController : MonoBehaviour
         // We will replace this with Collision code on the Projectiles / Enemies, since they won't be triggers
         else if (c.CompareTag("Projectile"))
         {
-            if (health > 10)
-            {
-                health -= 10;
-            }
-            else
-            {
-                health = 0;
-            }
-            Debug.Log("You took 10 damage from a projectile");
+            Damage(10);
+            Debug.Log("You took damage from a projectile");
             audio.playClip(3);
             c.gameObject.SetActive(false);
         }
         else if (c.CompareTag("Enemy"))
         {
-            if (health > 10)
-            {
-                health -= 10;
-            }
-            else
-            {
-                health = 0;
-            }
+            Damage(10);
             Debug.Log("You took damage from touching an enemy");
             audio.playClip(3);
         }
@@ -397,14 +368,50 @@ public class PlayerController : MonoBehaviour
 
     public void Damage(float d)
     {
-        Debug.Log(d);
-        if (health > d)
+        Debug.Log("Initial Damage Taken:" + d); 
+        
+        if (blueArmor)
         {
-            health -= d;
+            d = Mathf.Floor(d / 2);
+        }
+
+        if (greenArmor)
+        {
+            d = Mathf.Floor((d * 2) / 3);
+        }
+        
+        Debug.Log("Modified Damage Taken (Armor): " + d);
+        
+        if (armor > d)
+        {
+            armor -= d;
         }
         else
         {
+            float difference = d - armor;
+            armor = 0;
+
+            if (health > difference)
+            {
+                health -= difference;
+            }
+            else
+            {
+                health = 0;
+                
+            }
             health = 0;
         }
     }
+    
+    /* GETTERS AND SETTERS */
+    public void SetHealth(float f) { health = f;}
+    public void SetArmor(float f) { armor = f;}
+    public void SetBullets(int f) { bullets = f;}
+    public void SetShells(int f) { shells = f;}
+    public float GetHealth() { return health;}
+    public float GetArmor() { return armor;}
+    public int GetBullets() { return bullets;}
+    public int GetShells() { return shells;}
+
 }

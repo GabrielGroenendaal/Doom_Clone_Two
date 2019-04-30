@@ -56,4 +56,13 @@ public class EnemyBaseScript : MonoBehaviour
     {
         sfxPlayer.PlayOneShot(sfx);
     }
+
+    /* private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Projectile"))
+        {
+            EnemyHit(3.0f);
+            Debug.Log("An enemy just ran into another enemy's projectile");
+        }
+    }*/
 }
