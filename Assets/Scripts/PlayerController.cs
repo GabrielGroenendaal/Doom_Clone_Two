@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 {
     
     /* REFERENCES TO OTHER SCRIPTS */
-    public GameController game; // POOP - Will be important but we don't have a central gameController yet
+    public GameController game; 
     public AudioController audio;
     public UIController UI;
     
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
     /*HITSCAN CODE*/
 
     public Raycast ray;
-    public GameObject camera;
+    private GameObject camera;
 
     /*ANIMATION*/
     public Animator head_bobbing;
@@ -93,6 +93,8 @@ public class PlayerController : MonoBehaviour
 
         /*ANIMATION*/
         head_bobbing = camera.GetComponent<Animator>();
+
+        game = GameObject.Find("GameController").GetComponent<GameController>();
 
     }
 
@@ -295,7 +297,7 @@ public class PlayerController : MonoBehaviour
             
             else if (c.transform.name == "Armor Bonus")
             {
-                if (armor < 200)
+                if (armor < 100)
                 {
                     armor += 1;
                 }
@@ -321,6 +323,7 @@ public class PlayerController : MonoBehaviour
                 {
                     armor = 200;
                     blueArmor = true;
+                    greenArmor = false;
                     Debug.Log("picked up Blue Armor");
                     audio.playClip(2);
                     c.gameObject.SetActive(false);
@@ -333,6 +336,7 @@ public class PlayerController : MonoBehaviour
                 {
                     armor = 100;
                     greenArmor = true;
+                    blueArmor = false;
                     Debug.Log("picked up Green Armor");
                     audio.playClip(2);
                     c.gameObject.SetActive(false);
