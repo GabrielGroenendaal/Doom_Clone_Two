@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\thato\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\thato\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Doom_Clone_Two.-1176318531.00" t="ExcludeRecursive" />
-    <e p="E:\LongTermProjects\Doom_Clone_Two" t="IncludeRecursive">
+    <e p="C:\Users\Huron Lokhart\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Huron Lokhart\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Doom_Clone_Two.333544772.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Huron Lokhart\Documents\Doom_Clone_Two" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Animation" t="Include">
@@ -13,8 +13,12 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="AudioController.cs" t="Include" />
+          <e p="Gabe Scripts" t="Include">
+            <e p="Fading.cs" t="Include" />
+            <e p="Floating.cs" t="Include" />
+            <e p="ImpProjectile.cs" t="Include" />
+          </e>
           <e p="GameController.cs" t="Include" />
-          <e p="Imp.cs" t="Include" />
           <e p="Logan_Scripts" t="Include">
             <e p="Player_Move_FP_original.cs" t="Include" />
             <e p="Raycast_original.cs" t="Include" />
@@ -25,22 +29,16 @@
             <e p="Player_Move_FP.cs" t="Include" />
             <e p="Raycast.cs" t="Include" />
           </e>
-          <e p="PickUp.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
-          <e p="Trooper.cs" t="Include" />
-          <e p="UIControl.cs" t="Include" />
-          <e p="Zombieman.cs" t="Include" />
+          <e p="UIController.cs" t="Include" />
         </e>
-        <e p="TestScenes" t="Include">
-          <e p="Gabe_Test_Scenes" t="Include">
-            <e p="Pickup Testing" t="Include">
-              <e p="Fading.cs" t="Include" />
-              <e p="Floating.cs" t="Include" />
-              <e p="ImpProjectile.cs" t="Include" />
-              <e p="TestAudioController.cs" t="Include" />
-              <e p="TestPlayerController.cs" t="Include" />
-              <e p="TestUIController.cs" t="Include" />
-            </e>
+        <e p="Testing Scene" t="Include">
+          <e p="JamieModeTests" t="Include">
+            <e p="JamieReloadCommand.cs" t="Include" />
+            <e p="JamieTestCapController.cs" t="Include" />
+            <e p="JamieTestfpcontrols.cs" t="Include" />
+            <e p="JamieTestReloadCommand.cs" t="Include" />
+            <e p="JamieTestSimpleSmoothMouseLook.cs" t="Include" />
           </e>
           <e p="Parker_Test_Scenes" t="Include">
             <e p="ZombieMovement" t="Include">
