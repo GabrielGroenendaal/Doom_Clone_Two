@@ -693,10 +693,20 @@ PrefabInstance:
       propertyPath: velocityModifier
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 2221924759207063086, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: game
+      value: 
+      objectReference: {fileID: 1724386523}
     - target: {fileID: 2221924759207063087, guid: b2616197f78cebf4ca97951288a3ce51,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8258394147505543847, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2221924759207063087, guid: b2616197f78cebf4ca97951288a3ce51, type: 3}
@@ -1031,26 +1041,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1881298766 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2221924759207063084, guid: b2616197f78cebf4ca97951288a3ce51,
+--- !u!114 &1724386523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2871978328441943578, guid: 5be8244ade4949b4ca251f507dbdc324,
     type: 3}
-  m_PrefabInstance: {fileID: 1235360956}
+  m_PrefabInstance: {fileID: 2871978327565429113}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1881298768
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881298766}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af26f68d17d9c0048aed7b803bad1435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1888865838
 GameObject:
   m_ObjectHideFlags: 0
