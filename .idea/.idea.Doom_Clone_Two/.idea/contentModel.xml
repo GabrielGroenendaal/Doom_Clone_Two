@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\thato\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\thato\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Doom_Clone_Two.-1176318531.00" t="ExcludeRecursive" />
-    <e p="E:\LongTermProjects\Doom_Clone_Two" t="IncludeRecursive">
+    <e p="C:\Users\Huron Lokhart\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Huron Lokhart\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Doom_Clone_Two.333544772.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Huron Lokhart\Documents\Doom_Clone_Two" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Animation" t="Include">
@@ -33,6 +33,16 @@
           <e p="UIController.cs" t="Include" />
         </e>
         <e p="Testing Scene" t="Include">
+<<<<<<< HEAD
+=======
+          <e p="JamieModeTests" t="Include">
+            <e p="JamieReloadCommand.cs" t="Include" />
+            <e p="JamieTestCapController.cs" t="Include" />
+            <e p="JamieTestfpcontrols.cs" t="Include" />
+            <e p="JamieTestReloadCommand.cs" t="Include" />
+            <e p="JamieTestSimpleSmoothMouseLook.cs" t="Include" />
+          </e>
+>>>>>>> origin/JamieBranch
           <e p="Parker_Test_Scenes" t="Include">
             <e p="ZombieMovement" t="Include">
               <e p="EnemyRaycast.cs" t="Include" />
