@@ -13,8 +13,12 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="AudioController.cs" t="Include" />
+          <e p="Gabe Scripts" t="Include">
+            <e p="Fading.cs" t="Include" />
+            <e p="Floating.cs" t="Include" />
+            <e p="ImpProjectile.cs" t="Include" />
+          </e>
           <e p="GameController.cs" t="Include" />
-          <e p="Imp.cs" t="Include" />
           <e p="Logan_Scripts" t="Include">
             <e p="Player_Move_FP_original.cs" t="Include" />
             <e p="Raycast_original.cs" t="Include" />
@@ -25,26 +29,14 @@
             <e p="Player_Move_FP.cs" t="Include" />
             <e p="Raycast.cs" t="Include" />
           </e>
-          <e p="PickUp.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
-          <e p="Trooper.cs" t="Include" />
-          <e p="UIControl.cs" t="Include" />
-          <e p="Zombieman.cs" t="Include" />
+          <e p="UIController.cs" t="Include" />
         </e>
-        <e p="TestScenes" t="Include">
-          <e p="Gabe_Test_Scenes" t="Include">
-            <e p="Pickup Testing" t="Include">
-              <e p="Fading.cs" t="Include" />
-              <e p="Floating.cs" t="Include" />
-              <e p="ImpProjectile.cs" t="Include" />
-              <e p="TestAudioController.cs" t="Include" />
-              <e p="TestPlayerController.cs" t="Include" />
-              <e p="TestUIController.cs" t="Include" />
-            </e>
-          </e>
+        <e p="Testing Scene" t="Include">
           <e p="Parker_Test_Scenes" t="Include">
             <e p="ZombieMovement" t="Include">
               <e p="EnemyRaycast.cs" t="Include" />
+              <e p="ImpBehavior.cs" t="Include" />
               <e p="ZombiemenBehavior.cs" t="Include" />
             </e>
           </e>

@@ -4,30 +4,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class ZombiemenBehavior : MonoBehaviour
+public class ImpBehavior : MonoBehaviour
 {
     /* ENEMY INFO */
-    public float health = 10;
-    public float damage = 5;
-    public float sightRange = 50;
-    public float tooCloseRange = 15;
-    public float speed = 1.4f;
-    public float wallDetectionRange = 1f;
-    public float range = 50f;
+    private float health = 20;
+    private float damage = 10;
+    private float sightRange = 50;
+    private float playerTargetRange = 5;
+    private float MeleeRange = 2;
+    private float speed = 1.4f;
+    private float wallDetectionRange = 1f;
+    private float range = 50f;
 
-    public bool noFloor = false;
-     
     public Boolean isWalking;
     
     //timer increased when enemy is moving
     public float walkingTimer;
    
-    //when walkingTimer equals fireTime the Zombieman will attack
-    public float fireTime = 3;
+    //when walkingTimer equals fireTime the Imp will attack
+    public float fireTime = 2;
     public float fireWait = 0.5f;
     public bool shot = false;
     
     public float wallColTimer = 7;
+    public float turnTime = 1;
+    public bool turned = false;
+    public bool turned2 = false;
+    
     
     //time the enemy ignores a player after hitting a wall
     public float ignoreTime = 2;
@@ -45,64 +48,66 @@ public class ZombiemenBehavior : MonoBehaviour
     void Start()
     {
         enemyScript = gameObject.GetComponent<EnemyBaseScript>();
-        gameObject.name = "Zombieman";
+        gameObject.name = "Imp";
         enemyScript.setHealth(health);
         player = GameObject.Find("Player");
         playerScript = player.GetComponent<PlayerController>();
+        transform.LookAt(PlayerPos());
     }
     
     void Update()
     {
         //Debug.Log("g");
-        walkingTimerTick();
+        WalkingTimerTick();
         if (walkingTimer < fireTime)
         {
-            walk();
+            Walk();
         }
         else
         {
-            fire();
+            Fire();
         }
     }
 
-    void walkingTimerTick()
+    void WalkingTimerTick()
     {
         walkingTimer += Time.deltaTime;
     }
 
-    void walkingTimerReset()
+    void WalkingTimerReset()
     {
         walkingTimer = 0;
     }
     
-    void wallColTimerTick()
+    void WallColTimerTick()
     {
         wallColTimer += Time.deltaTime;
     }
 
-    void wallColTimerReset()
+    void WallColTimerReset()
     {
         wallColTimer = 0;
     }
 
-    public void fire()
+    public void Fire()
     {
-        float distance = Vector3.Distance(playerPos(), transform.position);
+        float distance = Vector3.Distance(PlayerPos(), transform.position);
 
         if (!shot && walkingTimer > fireTime && walkingTimer < fireTime + (fireWait/7))
         {
-            if (distance < tooCloseRange)
+            if (distance < MeleeRange)
             {
-                transform.LookAt(playerPos());
-                transform.Rotate(Vector3.up, 100);
+                transform.LookAt(PlayerPos());
+                MeleeAttack();
+                //transform.Rotate(Vector3.up, 100);
                 if (debug)
                 {
-                    Debug.Log("Too Close");
+                    Debug.Log("Melee Attack");
                 }
             }
             else if (distance < sightRange)
             {
-                transform.LookAt(playerPos());
+                transform.LookAt(PlayerPos());
                 Debug.Log("Turn");
                 if (debug)
                 {
@@ -117,8 +122,8 @@ public class ZombiemenBehavior : MonoBehaviour
         {
             if (distance < sightRange)
             {
-                FireScan();
-                //FireProjectile();
+                //FireScan();
+                FireProjectile();
                 shot = true;
                 if (debug)
                 {
@@ -135,23 +140,23 @@ public class ZombiemenBehavior : MonoBehaviour
         {
             //FIRES BULLET
             shot = false;
-            walkingTimerReset();
+            WalkingTimerReset();
             
         }
     }
 
     
-    public void walk()
+    public void Walk()
     {
-        wallCol();
+        WallCol();
         transform.Translate(Vector3.forward*Time.deltaTime*speed);
     }
     
     //factors wall contact into AI pathing
-    public void wallCol()
+    public void WallCol()
     {
-        wallColTimerTick();
-        float distance = Vector3.Distance(playerPos(), transform.position);
+        WallColTimerTick();
+        float distance = Vector3.Distance(PlayerPos(), transform.position);
         RaycastHit hit;
         if (debug)
         {
@@ -161,61 +166,26 @@ public class ZombiemenBehavior : MonoBehaviour
             Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.back), Color.magenta);
             Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.right), Color.magenta);
             Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.left), Color.magenta);
-            //Debug.DrawRay(this.transform.position, transform.TransformDirection(new Vector3(0,-0.9f,2)), Color.cyan);
-            //Debug.DrawRay(this.transform.position, transform.TransformDirection(new Vector3(0,-0.9f,2)) * wallDetectionRange, Color.cyan);
         }
-
-        //Debug.Log(Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(0, -0.9f, 2)), out hit, wallDetectionRange*2));
-        
-        if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(0, -0.9f, 2)), out hit, wallDetectionRange*2))
-        {
-            Debug.DrawRay(this.transform.position, transform.TransformDirection(new Vector3(0,-0.9f,2)) * wallDetectionRange, Color.cyan);
-
-            if (debug)
-            {
-                Debug.Log("i" + hit.collider.name);
-            }
-
-            if (hit.collider.Equals(null))
-            {
-                noFloor = true;
-            }
-            else
-            {
-                noFloor = false;
-            }
-        }
-        else
-        {
-            noFloor = true;
-        }
-
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit,wallDetectionRange) )
         {
-            transform.Rotate(Vector3.up, 180);
-            wallColTimerReset();
+            
+            //transform.LookAt(hit.transform);
+            transform.Rotate(Vector3.up, 120);
+            WallColTimerReset();
             if (debug)
             {
-                Debug.Log("Wall in front");
+                Debug.Log("F");
             }
 
-        }
-        else if (noFloor)
-        {
-            transform.Rotate(Vector3.up, 180);
-            wallColTimerReset();
-            if (debug)
-            {
-                //Debug.Log("no floor!");
-            }
         }
         else if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit,wallDetectionRange))
         {
             
             //transform.LookAt(hit.transform);
             //transform.Rotate(Vector3.up, 180);
-            wallColTimerReset();
+            //WallColTimerReset();
             if (debug)
             {
                 Debug.Log("B");
@@ -226,8 +196,8 @@ public class ZombiemenBehavior : MonoBehaviour
         {
             
             //transform.LookAt(hit.transform);
-            transform.Rotate(Vector3.up, 90);
-            wallColTimerReset();
+            //transform.Rotate(Vector3.up, 90);
+            //WallColTimerReset();
             if (debug)
             {
                 Debug.Log("L");
@@ -238,26 +208,56 @@ public class ZombiemenBehavior : MonoBehaviour
         {
 
             //transform.LookAt(hit.transform);
-            transform.Rotate(Vector3.up, -90);
-            wallColTimerReset();
+            //transform.Rotate(Vector3.up, -90);
+            //WallColTimerReset();
             if (debug)
             {
                 Debug.Log("R");
             }
-        }else if (distance < tooCloseRange && wallColTimer > ignoreTime)            
+        }
+        else if (distance < playerTargetRange)
         {
-            transform.LookAt(playerPos());
-            transform.Rotate(Vector3.up,95);
+            transform.LookAt(PlayerPos());
+        }
+        else if (distance < MeleeRange) 
+        {
+            transform.LookAt(PlayerPos());
+            MeleeAttack();
             if (debug)
             {
-                Debug.Log("avoiding player");
+                Debug.Log("attacking player");
             }
 
-            wallColTimerReset();
+            WallColTimerReset();
         }
-    }
+        else if (wallColTimer > (turnTime * 3))
+        {
+            WallColTimerReset();
+            transform.LookAt(PlayerPos());
+            transform.Rotate(Vector3.up, -60);
+            turned = false;
+            turned2 = false;
+        }
+        else if (wallColTimer > (turnTime * 2))
+        {
+            //WallColTimerReset();
+            if (!turned2)
+            {
+                transform.Rotate(Vector3.up, -120);
+                turned2 = true;
+            }
+        }
+        else if (wallColTimer > turnTime)
+        {
+            if (!turned) 
+            {
+                transform.Rotate(Vector3.up, 60);
+                turned = true;
+            }
+        }
 
-    public Vector3 playerPos()
+    }
+    public Vector3 PlayerPos()
     {
         Vector3 newpos = new Vector3(player.transform.position.x,transform.position.y,player.transform.position.z );
         return newpos;
@@ -269,12 +269,18 @@ public class ZombiemenBehavior : MonoBehaviour
         Debug.Log("Enemy Fired");
         Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.forward)*range, Color.yellow);
         
-        if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range) && hit.collider.tag == "Player")
+        if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range) && hit.collider.CompareTag("Player"))
         {
             Debug.Log("Player Hit");
             enemyScript.sound();
             playerScript.Damage(damage);
         }
+    }
+
+    public void MeleeAttack()
+    {
+        enemyScript.sound();
+        playerScript.Damage(damage);
     }
 
     public void FireProjectile()
@@ -283,5 +289,28 @@ public class ZombiemenBehavior : MonoBehaviour
         GameObject projectileShot = Instantiate(projectile,bop,Quaternion.identity);
         projectileShot.transform.LookAt(player.transform);
         Debug.Log("Enemy Fired");
+    }
+    
+    /*
+    public void TimerReset(float timer)
+    {
+        timer = 0;
+    }
+
+    public void TimerTick(float timer)
+    {
+        timer += Time.deltaTime;
+    }
+
+    public void TimerTick(float timer, float rate)
+    {
+        timer += Time.deltaTime * rate;
+    }
+    */
+
+    public float WalkingTimer
+    {
+        get => walkingTimer;
+        set => walkingTimer = value;
     }
 }
