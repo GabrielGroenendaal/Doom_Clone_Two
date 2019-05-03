@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 {
     
     /* REFERENCES TO OTHER SCRIPTS */
-    public GameController game; // POOP - Will be important but we don't have a central gameController yet
+    public GameController game; 
     public AudioController audio;
     public UIController UI;
     
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     private float ArmorMax;
     
     /* MOVEMENT */
-    private Rigidbody thisRigidBody; 
+    /*private Rigidbody thisRigidBody; 
     public Camera thisCamera;  
     private float pitch; // the mouse movement up/down
     private float yaw;   // the mouse movement left/right
@@ -52,15 +52,14 @@ public class PlayerController : MonoBehaviour
     private float fpStrafe;  // input float from A D keys
     private Vector3 inputVelocity;  // cumulative velocity to move character
     public float velocityModifier;  // velocity multiplied by this number
-    private float verticalLook; 
+    private float verticalLook;*/
     
     /*HITSCAN CODE*/
-
     public Raycast ray;
-    public GameObject camera;
+    private GameObject camera;
 
     /*ANIMATION*/
-    public Animator head_bobbing;
+    // public Animator head_bobbing;
     //public float animSpeed = 0f; POOP - Is currently not implemented
 
     // Initializes values of player resources, game states, and movement
@@ -69,9 +68,9 @@ public class PlayerController : MonoBehaviour
         /**/
         
         /* MOVEMENT */
-        thisRigidBody = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // thisRigidBody = GetComponent<Rigidbody>();
+        // Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.visible = false;
         
         /* RESOURCES */
         health = 100;
@@ -89,10 +88,12 @@ public class PlayerController : MonoBehaviour
         greenArmor = false;
         activeWeapon = "pistol";
         UI.ActiveWeapon(0); // Sets active weapon on UI to the pistol
-        camera = thisCamera.gameObject;
+        // camera = thisCamera.gameObject;
 
         /*ANIMATION*/
-        head_bobbing = camera.GetComponent<Animator>();
+        // head_bobbing = camera.GetComponent<Animator>();
+
+        game = GameObject.Find("GameController").GetComponent<GameController>();
 
     }
 
@@ -100,7 +101,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Standard FPS Movement Code
-        yaw = Input.GetAxis("Mouse X");
+        /*yaw = Input.GetAxis("Mouse X");
         transform.Rotate(0f, yaw, 0f);
         
         pitch = Input.GetAxis("Mouse Y");
@@ -112,7 +113,7 @@ public class PlayerController : MonoBehaviour
         fpStrafe = Input.GetAxis("Horizontal");
 
         inputVelocity = transform.forward * fpForwardBackward;
-        inputVelocity += transform.right * fpStrafe;
+        inputVelocity += transform.right * fpStrafe;*/
 
         if (health <= 0)
         {
@@ -172,13 +173,13 @@ public class PlayerController : MonoBehaviour
         }
         
         /* APPLIES MOVEMENT */
-        thisRigidBody.velocity = inputVelocity * velocityModifier; 
+        // thisRigidBody.velocity = inputVelocity * velocityModifier; 
         
         /* UPDATES UI */
         UI.PlayerUpdateUI(activeWeapon, bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax);
 
         /*ANIMATION FOR HEAD BOBBING*/
-         head_bobbing.speed = fpForwardBackward;
+         // head_bobbing.speed = fpForwardBackward;
     }
     
     /* PICKUPS & COLLISION */
@@ -295,7 +296,7 @@ public class PlayerController : MonoBehaviour
             
             else if (c.transform.name == "Armor Bonus")
             {
-                if (armor < 200)
+                if (armor < 100)
                 {
                     armor += 1;
                 }
@@ -321,6 +322,7 @@ public class PlayerController : MonoBehaviour
                 {
                     armor = 200;
                     blueArmor = true;
+                    greenArmor = false;
                     Debug.Log("picked up Blue Armor");
                     audio.playClip(2);
                     c.gameObject.SetActive(false);
@@ -333,6 +335,7 @@ public class PlayerController : MonoBehaviour
                 {
                     armor = 100;
                     greenArmor = true;
+                    blueArmor = false;
                     Debug.Log("picked up Green Armor");
                     audio.playClip(2);
                     c.gameObject.SetActive(false);
@@ -408,10 +411,5 @@ public class PlayerController : MonoBehaviour
     public void SetHealth(float f) { health = f;}
     public void SetArmor(float f) { armor = f;}
     public void SetBullets(int f) { bullets = f;}
-    public void SetShells(int f) { shells = f;}
-    public float GetHealth() { return health;}
-    public float GetArmor() { return armor;}
-    public int GetBullets() { return bullets;}
-    public int GetShells() { return shells;}
-
+    public void SetShells(int f) { shells = f;}   
 }
