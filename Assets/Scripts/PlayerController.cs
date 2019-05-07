@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
 
     /*ANIMATION*/
     public Animator head_bobbing;
+    public float startGunSway = 0f;
     //public float animSpeed = 0f; POOP - Is currently not implemented
 
     // Initializes values of player resources, game states, and movement
@@ -193,7 +194,20 @@ public class PlayerController : MonoBehaviour
         UI.PlayerUpdateUI(activeWeapon, bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax);
 
         /*ANIMATION FOR HEAD BOBBING*/
-         head_bobbing.speed = fpForwardBackward;
+        head_bobbing.speed = fpForwardBackward;
+        startGunSway += fpForwardBackward;
+        if(head_bobbing.speed > 0.5)
+        {
+            head_bobbing.speed = 0.5f;
+        }
+
+        /*
+        if(startGunSway >= 70.0f)
+        {
+            head_bobbing.playbackTime = 16.0f;
+            head_bobbing.StartPlayback();
+        }
+        */
     }
     
     /* PICKUPS & COLLISION */
