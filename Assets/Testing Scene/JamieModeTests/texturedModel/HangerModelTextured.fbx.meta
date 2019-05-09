@@ -1,14 +1,21 @@
 fileFormatVersion: 2
-guid: f54b56f6ab9c6ce4584ad346d343aef4
+guid: 267ceb59bdbaf26419d7b501f9c3f2ea
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Material.002
+    2100000: FloorHex
+    2100002: BLUE
+    2100004: WallTech
+    2100006: WallBrown
+    2100008: WallRust
+    2100010: Celling
+    2100012: FloorGoo
+    2100014: WallSlad
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SketchUp.406
+    4300000: Hanger
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -49,7 +56,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
