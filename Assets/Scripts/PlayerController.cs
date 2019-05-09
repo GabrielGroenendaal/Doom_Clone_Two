@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
+using System;
 
 // This script serves as a brain for several different scripts, but the main three functions are:
 //       (A) Player Movement 
@@ -18,49 +19,47 @@ public class PlayerController : MonoBehaviour
 {
     
     /* REFERENCES TO OTHER SCRIPTS */
-    public GameController game; // POOP - Will be important but we don't have a central gameController yet
+    public GameController game; 
     public AudioController audio;
     public UIController UI;
     
     /* GAME STATES AND BOOLEANS */
     // A handful of booleans and timer that track different game and player states as they get upgrades
-    public bool hasShotgun;
-    public bool paused; // POOP
-    public string activeWeapon;
+    private bool hasShotgun;
+    private bool paused; // POOP
+    private string activeWeapon;
     public bool blueArmor; 
-    public bool greenArmor; // Tracks if player has Green Armor
-    public float reloadTimer; // Timer used for reload timer between shots 
+    private bool greenArmor; // Tracks if player has Green Armor
+    private float reloadTimer; // Timer used for reload timer between shots 
     
     /* PLAYER RESOURCES */
     // Tracks Ammunition, Health, and Armor uses int and float values
     public int bullets;
-    public int bulletsMax;
+    private int bulletsMax;
     public int shells;
-    public int shellsMax;
+    private int shellsMax;
     public float health;
-    public float healthMax;
+    private float healthMax;
     public float armor;
-    public float ArmorMax;
+    private float ArmorMax;
     
     /* MOVEMENT */
-    public Rigidbody thisRigidBody; 
+    /*private Rigidbody thisRigidBody; 
     public Camera thisCamera;  
-    public float pitch; // the mouse movement up/down
-    public float yaw;   // the mouse movement left/right
-    public float fpForwardBackward; // input float from  W and S keys
-    public float fpStrafe;  // input float from A D keys
-    public Vector3 inputVelocity;  // cumulative velocity to move character
+    private float pitch; // the mouse movement up/down
+    private float yaw;   // the mouse movement left/right
+    private float fpForwardBackward; // input float from  W and S keys
+    private float fpStrafe;  // input float from A D keys
+    private Vector3 inputVelocity;  // cumulative velocity to move character
     public float velocityModifier;  // velocity multiplied by this number
-    float verticalLook; 
+    private float verticalLook;*/
     
     /*HITSCAN CODE*/
-
     public Raycast ray;
-    public GameObject camera;
+    private GameObject camera;
 
     /*ANIMATION*/
-    public Animator head_bobbing;
-    public float startGunSway = 0f;
+    // public Animator head_bobbing;
     //public float animSpeed = 0f; POOP - Is currently not implemented
 
     // Initializes values of player resources, game states, and movement
@@ -69,9 +68,9 @@ public class PlayerController : MonoBehaviour
         /**/
         
         /* MOVEMENT */
-        thisRigidBody = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // thisRigidBody = GetComponent<Rigidbody>();
+        // Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.visible = false;
         
         /* RESOURCES */
         health = 100;
@@ -89,10 +88,12 @@ public class PlayerController : MonoBehaviour
         greenArmor = false;
         activeWeapon = "pistol";
         UI.ActiveWeapon(0); // Sets active weapon on UI to the pistol
-        camera = thisCamera.gameObject;
+        // camera = thisCamera.gameObject;
 
         /*ANIMATION*/
-        head_bobbing = camera.GetComponent<Animator>();
+        // head_bobbing = camera.GetComponent<Animator>();
+
+        game = GameObject.Find("GameController").GetComponent<GameController>();
 
     }
 
@@ -100,7 +101,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Standard FPS Movement Code
-        yaw = Input.GetAxis("Mouse X");
+        /*yaw = Input.GetAxis("Mouse X");
         transform.Rotate(0f, yaw, 0f);
         
         pitch = Input.GetAxis("Mouse Y");
@@ -112,32 +113,16 @@ public class PlayerController : MonoBehaviour
         fpStrafe = Input.GetAxis("Horizontal");
 
         inputVelocity = transform.forward * fpForwardBackward;
-        inputVelocity += transform.right * fpStrafe;
+        inputVelocity += transform.right * fpStrafe;*/
+
+        if (health <= 0)
+        {
+            game.GameOver();
+        }
     }
     
     void FixedUpdate()
     {
-        // POOP; unused code for pause and menus
-        /*if (paused)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                UI.CloseMenu();
-                game.Unpause();
-                paused = false;
-            }
-        }
-
-        else {
-        
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                UI.OpenMenu();
-                game.Pause();
-                paused = true;
-            }
-        }*/
-
         // Increments Timer for Reload
         if (reloadTimer > 0.0f)
         {
@@ -188,26 +173,13 @@ public class PlayerController : MonoBehaviour
         }
         
         /* APPLIES MOVEMENT */
-        thisRigidBody.velocity = inputVelocity * velocityModifier; 
+        // thisRigidBody.velocity = inputVelocity * velocityModifier; 
         
         /* UPDATES UI */
         UI.PlayerUpdateUI(activeWeapon, bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax);
 
         /*ANIMATION FOR HEAD BOBBING*/
-        head_bobbing.speed = fpForwardBackward;
-        startGunSway += fpForwardBackward;
-        if(head_bobbing.speed > 0.5)
-        {
-            head_bobbing.speed = 0.5f;
-        }
-
-        /*
-        if(startGunSway >= 70.0f)
-        {
-            head_bobbing.playbackTime = 16.0f;
-            head_bobbing.StartPlayback();
-        }
-        */
+         // head_bobbing.speed = fpForwardBackward;
     }
     
     /* PICKUPS & COLLISION */
@@ -324,7 +296,7 @@ public class PlayerController : MonoBehaviour
             
             else if (c.transform.name == "Armor Bonus")
             {
-                if (armor < 200)
+                if (armor < 100)
                 {
                     armor += 1;
                 }
@@ -350,6 +322,7 @@ public class PlayerController : MonoBehaviour
                 {
                     armor = 200;
                     blueArmor = true;
+                    greenArmor = false;
                     Debug.Log("picked up Blue Armor");
                     audio.playClip(2);
                     c.gameObject.SetActive(false);
@@ -362,6 +335,7 @@ public class PlayerController : MonoBehaviour
                 {
                     armor = 100;
                     greenArmor = true;
+                    blueArmor = false;
                     Debug.Log("picked up Green Armor");
                     audio.playClip(2);
                     c.gameObject.SetActive(false);
@@ -382,28 +356,14 @@ public class PlayerController : MonoBehaviour
         // We will replace this with Collision code on the Projectiles / Enemies, since they won't be triggers
         else if (c.CompareTag("Projectile"))
         {
-            if (health > 10)
-            {
-                health -= 10;
-            }
-            else
-            {
-                health = 0;
-            }
-            Debug.Log("You took 10 damage from a projectile");
+            Damage(10);
+            Debug.Log("You took damage from a projectile");
             audio.playClip(3);
             c.gameObject.SetActive(false);
         }
         else if (c.CompareTag("Enemy"))
         {
-            if (health > 10)
-            {
-                health -= 10;
-            }
-            else
-            {
-                health = 0;
-            }
+            Damage(10);
             Debug.Log("You took damage from touching an enemy");
             audio.playClip(3);
         }
@@ -411,14 +371,44 @@ public class PlayerController : MonoBehaviour
 
     public void Damage(float d)
     {
-        Debug.Log(d);
-        if (health > d)
+        Debug.Log("Initial Damage Taken:" + d); 
+        
+        if (blueArmor)
         {
-            health -= d;
+            d = Mathf.Floor(d / 2);
+        }
+
+        if (greenArmor)
+        {
+            d = Mathf.Floor((d * 2) / 3);
+        }
+        
+        Debug.Log("Modified Damage Taken (Armor): " + d);
+        
+        if (armor > d)
+        {
+            armor -= d;
         }
         else
         {
-            health = 0;
+            float difference = d - armor;
+            armor = 0;
+
+            if (health > difference)
+            {
+                health -= difference;
+            }
+            else
+            {
+                health = 0;
+                
+            }
         }
     }
+    
+    /* GETTERS AND SETTERS */
+    public void SetHealth(float f) { health = f;}
+    public void SetArmor(float f) { armor = f;}
+    public void SetBullets(int f) { bullets = f;}
+    public void SetShells(int f) { shells = f;}   
 }

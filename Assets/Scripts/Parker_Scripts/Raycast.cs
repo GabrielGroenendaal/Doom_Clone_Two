@@ -10,7 +10,7 @@ public class Raycast : MonoBehaviour
 {
     public float hitScanRange = 100f;
     public float doorRange = 3f;
-    public float damage = 1;
+    public float damage = 5;
     void Start()
     {
         
