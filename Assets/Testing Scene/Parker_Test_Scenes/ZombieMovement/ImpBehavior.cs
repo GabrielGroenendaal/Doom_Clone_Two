@@ -7,14 +7,14 @@ using Random = System.Random;
 public class ImpBehavior : MonoBehaviour
 {
     /* ENEMY INFO */
-    private float health = 20;
-    private float damage = 10;
-    private float sightRange = 50;
-    private float playerTargetRange = 5;
-    private float MeleeRange = 2;
-    private float speed = 1.4f;
-    private float wallDetectionRange = 1f;
-    private float range = 50f;
+    public float health = 20;
+    public float damage = 10;
+    public float sightRange = 50;
+    public float playerTargetRange = 5;
+    public float MeleeRange = 2;
+    public float speed = 1.4f;
+    public float wallDetectionRange = 1f;
+    public float range = 50f;
 
     public Boolean isWalking;
     
@@ -149,7 +149,11 @@ public class ImpBehavior : MonoBehaviour
     public void Walk()
     {
         WallCol();
-        transform.Translate(Vector3.forward*Time.deltaTime*speed);
+        float distance = Vector3.Distance(playerPos(), transform.position);
+        if (distance < sightRange)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        }
     }
     
     //factors wall contact into AI pathing
@@ -312,5 +316,11 @@ public class ImpBehavior : MonoBehaviour
     {
         get => walkingTimer;
         set => walkingTimer = value;
+    }
+    
+    public Vector3 playerPos()
+    {
+        Vector3 newpos = new Vector3(player.transform.position.x,transform.position.y, player.transform.position.z );
+        return newpos;
     }
 }

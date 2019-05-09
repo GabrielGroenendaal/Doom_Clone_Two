@@ -148,10 +148,15 @@ public class ZombiemenBehavior : MonoBehaviour
     
     public void walk()
     {
+        float distance = Vector3.Distance(playerPos(), transform.position);
         wallCol();
-        thisAnimator.SetTrigger("WalkTrig");
-        thisAnimator.ResetTrigger("FireTrig");
-        transform.Translate(Vector3.forward*Time.deltaTime*speed);
+        if (distance < sightRange)
+        {
+            thisAnimator.SetTrigger("WalkTrig");
+            thisAnimator.ResetTrigger("FireTrig");
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        }
+
     }
     
     //factors wall contact into AI pathing
