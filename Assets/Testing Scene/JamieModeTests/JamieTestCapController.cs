@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.UIElements.GraphView;
 using UnityEngine;
 
 public class JamieTestCapController : MonoBehaviour {
@@ -7,11 +8,13 @@ public class JamieTestCapController : MonoBehaviour {
     public float speed = 10.0f;
     private float translation;
     private float straffe;
-
+    private Rigidbody thisrigidbody;
+    
     // Use this for initialization
     void Start () {
         // turn off the cursor
-        Cursor.lockState = CursorLockMode.Locked;		
+        Cursor.lockState = CursorLockMode.Locked;
+        thisrigidbody = GetComponent<Rigidbody>();
     }
 	
     // Update is called once per frame
@@ -25,6 +28,15 @@ public class JamieTestCapController : MonoBehaviour {
         if (Input.GetKeyDown("escape")) {
             // turn on the cursor
             Cursor.lockState = CursorLockMode.None;
+        }
+
+        if (Input.GetButton("Vertical") || Input.GetButton("Horizontal"))
+        {
+            thisrigidbody.drag = 0;
+        }
+        else
+        {
+            thisrigidbody.drag = 5;
         }
     }
 }
