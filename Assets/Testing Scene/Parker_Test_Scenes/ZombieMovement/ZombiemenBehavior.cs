@@ -17,7 +17,7 @@ public class ZombiemenBehavior : MonoBehaviour
 
     public bool noFloor = false;
      
-    public Boolean isWalking;
+    public bool isWalking;
     
     //timer increased when enemy is moving
     public float walkingTimer;
@@ -36,6 +36,7 @@ public class ZombiemenBehavior : MonoBehaviour
     
     /* REFERENCES */
     public EnemyBaseScript enemyScript;
+    public EnemyRaycast enemyRaycast;
     public GameObject player;
     public Collider playerCol;
     public PlayerController playerScript;
@@ -44,7 +45,7 @@ public class ZombiemenBehavior : MonoBehaviour
     
     
     //debug booleans
-    public Boolean debug = false;
+    public bool debug = false;
     void Start()
     {
         enemyScript = gameObject.GetComponent<EnemyBaseScript>();
@@ -54,6 +55,7 @@ public class ZombiemenBehavior : MonoBehaviour
         playerScript = player.GetComponent<PlayerController>();
         playerCol = player.GetComponent<Collider>();
         thisAnimator = transform.Find("body").GetComponent<Animator>();
+        enemyRaycast = transform.Find("Raycast").GetComponent<EnemyRaycast>();
     } 
     
     void Update()
@@ -122,7 +124,7 @@ public class ZombiemenBehavior : MonoBehaviour
         {
             if (distance < sightRange)
             {
-                FireScan();
+                enemyRaycast.fireScan(damage);
                 //thisAnimator.ResetTrigger("WalkTrig");
                 thisAnimator.SetTrigger("FireTrig");
                 //FireProjectile();
@@ -284,20 +286,6 @@ public class ZombiemenBehavior : MonoBehaviour
         return newpos;
     }
           
-    public void FireScan()
-    {
-        RaycastHit hit;
-        Debug.Log("Enemy Fired");
-        Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.forward)*range, Color.yellow);
-        
-        if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range) && hit.collider.tag == "Player")
-        {
-            Debug.Log("Player Hit");
-            enemyScript.sound();
-            playerScript.Damage(damage);
-        }
-    }
-
     public void FireProjectile()
     {
         Vector3 bop = transform.position;
