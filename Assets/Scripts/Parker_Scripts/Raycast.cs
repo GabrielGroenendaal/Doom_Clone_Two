@@ -28,7 +28,7 @@ public class Raycast : MonoBehaviour
 
          if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, doorRange) && hit.collider.tag == "Door")
          {
-            Debug.Log("I touched " + hit.collider.gameObject.name);
+            //Debug.Log("I touched " + hit.collider.gameObject.name);
             //animates door opening
             hit.collider.gameObject.GetComponent<Door>().OpenDoor();
          }

@@ -45,20 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   damage: 5
-  sightRange: 50
-  tooCloseRange: 15
-  speed: 1.4
-  wallDetectionRange: 1
   range: 50
-  noFloor: 0
-  isWalking: 0
-  walkingTimer: 0
-  fireTime: 3
-  fireWait: 0.5
-  shot: 0
-  wallColTimer: 7
-  ignoreTime: 2
-  wallTime: 1
   enemyScript: {fileID: 4574366750889802302}
   player: {fileID: 0}
   playerCol: {fileID: 0}
@@ -200,7 +187,7 @@ MonoBehaviour:
   noFloor: 0
   isWalking: 0
   walkingTimer: 0
-  fireTime: 3
+  fireTime: 2
   fireWait: 0.8
   shot: 0
   wallColTimer: 0
