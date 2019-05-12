@@ -8,12 +8,6 @@ using System;
 //       (A) Player Movement 
 //       (B) Player Inputs: Move, Shooting, Weapon Switching
 //       (C) Resource Tracking 
-// This script references two other major scripts:
-//       | TestUIController which displays all the resources tracked in this script on the UI
-//       | TestAudioController which manages audio clips that are referenced by this script
-
-/* POOP */
-// Any script with the comment "POOP" is not currently functional / implemented. 
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,16 +18,14 @@ public class PlayerController : MonoBehaviour
     public UIController UI;
     
     /* GAME STATES AND BOOLEANS */
-    // A handful of booleans and timer that track different game and player states as they get upgrades
-    private bool hasShotgun;
+    public bool hasShotgun;
     private bool paused; // POOP
     private string activeWeapon;
     public bool blueArmor; 
-    private bool greenArmor; // Tracks if player has Green Armor
+    public bool greenArmor; // Tracks if player has Green Armor
     private float reloadTimer; // Timer used for reload timer between shots 
     
     /* PLAYER RESOURCES */
-    // Tracks Ammunition, Health, and Armor uses int and float values
     public int bullets;
     private int bulletsMax;
     public int shells;
@@ -43,35 +35,13 @@ public class PlayerController : MonoBehaviour
     public float armor;
     private float ArmorMax;
     
-    /* MOVEMENT */
-    /*private Rigidbody thisRigidBody; 
-    public Camera thisCamera;  
-    private float pitch; // the mouse movement up/down
-    private float yaw;   // the mouse movement left/right
-    private float fpForwardBackward; // input float from  W and S keys
-    private float fpStrafe;  // input float from A D keys
-    private Vector3 inputVelocity;  // cumulative velocity to move character
-    public float velocityModifier;  // velocity multiplied by this number
-    private float verticalLook;*/
-    
     /*HITSCAN CODE*/
     public Raycast ray;
     private GameObject camera;
 
-    /*ANIMATION*/
-    // public Animator head_bobbing;
-    //public float animSpeed = 0f; POOP - Is currently not implemented
-
     // Initializes values of player resources, game states, and movement
     void Start()
     {
-        /**/
-        
-        /* MOVEMENT */
-        // thisRigidBody = GetComponent<Rigidbody>();
-        // Cursor.lockState = CursorLockMode.Locked;
-        // Cursor.visible = false;
-        
         /* RESOURCES */
         health = 100;
         healthMax = 100;
@@ -88,42 +58,17 @@ public class PlayerController : MonoBehaviour
         greenArmor = false;
         activeWeapon = "pistol";
         UI.ActiveWeapon(0); // Sets active weapon on UI to the pistol
-        // camera = thisCamera.gameObject;
-
-        /*ANIMATION*/
-        // head_bobbing = camera.GetComponent<Animator>();
-
         game = GameObject.Find("GameController").GetComponent<GameController>();
-
     }
 
     // Standard FPS Movement 
     void Update()
     {
-        // Standard FPS Movement Code
-        /*yaw = Input.GetAxis("Mouse X");
-        transform.Rotate(0f, yaw, 0f);
-        
-        pitch = Input.GetAxis("Mouse Y");
-        verticalLook += -pitch;
-        verticalLook = Mathf.Clamp(verticalLook, -80f, 80f);
-        thisCamera.transform.localEulerAngles = new Vector3(verticalLook,0f,0f);        
-        
-        fpForwardBackward = Input.GetAxis("Vertical");
-        fpStrafe = Input.GetAxis("Horizontal");
-
-        inputVelocity = transform.forward * fpForwardBackward;
-        inputVelocity += transform.right * fpStrafe;*/
-
-        if (health <= 0)
-        {
-            game.GameOver();
-        }
+        if (health <= 0) { game.GameOver(); }
     }
     
     void FixedUpdate()
     {
-        // Increments Timer for Reload
         if (reloadTimer > 0.0f)
         {
             reloadTimer -= Time.deltaTime;
@@ -132,7 +77,6 @@ public class PlayerController : MonoBehaviour
         // Input for Firing your Weapon
         if (Input.GetKeyDown(KeyCode.Mouse0) && reloadTimer <= 0.0f)
         {
-            // Fires a different weapon based on your active weapon
             if (activeWeapon == "pistol")
             {
                 if (bullets > 0) // Checks if you have bullets to fire
@@ -141,7 +85,6 @@ public class PlayerController : MonoBehaviour
                     reloadTimer = .25f; // Sets a short reload timer
                     bullets -= 1; // Increments Bullet Counter
                     ray.HitScanFire();
-                    // Animation?
                 }
             }
             else if (activeWeapon == "shotgun")
@@ -162,24 +105,16 @@ public class PlayerController : MonoBehaviour
             UI.ActiveWeapon(0); // changes visual for active weapon
             audio.playClip(4);
             activeWeapon = "pistol";
-            // Animation
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && hasShotgun)
         {
             UI.ActiveWeapon(1); // changes visual for active weapon
             audio.playClip(5);
             activeWeapon = "shotgun";
-            // Animation
         }
-        
-        /* APPLIES MOVEMENT */
-        // thisRigidBody.velocity = inputVelocity * velocityModifier; 
-        
+    
         /* UPDATES UI */
         UI.PlayerUpdateUI(activeWeapon, bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax);
-
-        /*ANIMATION FOR HEAD BOBBING*/
-         // head_bobbing.speed = fpForwardBackward;
     }
     
     /* PICKUPS & COLLISION */
@@ -377,12 +312,11 @@ public class PlayerController : MonoBehaviour
         {
             d = Mathf.Floor(d / 2);
         }
-
         if (greenArmor)
         {
             d = Mathf.Floor((d * 2) / 3);
         }
-        
+     
         Debug.Log("Modified Damage Taken (Armor): " + d);
         
         if (armor > d)
@@ -405,10 +339,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    
-    /* GETTERS AND SETTERS */
-    public void SetHealth(float f) { health = f;}
-    public void SetArmor(float f) { armor = f;}
-    public void SetBullets(int f) { bullets = f;}
-    public void SetShells(int f) { shells = f;}   
 }
