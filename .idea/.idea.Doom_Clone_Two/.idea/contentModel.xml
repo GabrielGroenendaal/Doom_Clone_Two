@@ -302,6 +302,7 @@
             <e p="JamieTestSimpleSmoothMouseLook.cs" t="Include" />
           </e>
           <e p="Parker_Test_Scenes" t="Include">
+            <e p="fixingImpProjectile.cs" t="Include" />
             <e p="ZombieMovement" t="Include">
               <e p="EnemyRaycast.cs" t="Include" />
               <e p="ImpBehavior.cs" t="Include" />

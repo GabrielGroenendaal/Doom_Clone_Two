@@ -34,12 +34,12 @@ public class EnemyRaycast : MonoBehaviour
     public void fireScan(float i)
     {
         RaycastHit hit;
-        Debug.Log("Enemy Fired");
+        //Debug.Log("Enemy Fired");
         Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.forward)*range, Color.yellow);
         
         if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range) && hit.collider.tag == "Player")
         {
-            Debug.Log("Player Hit");
+            //Debug.Log("Player Hit");
             //enemyScript.sound();
             playerScript.Damage(i);
         }

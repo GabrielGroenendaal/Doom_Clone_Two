@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   damage: 10
-  sightRange: 50
+  sightRange: 35.68
   playerTargetRange: 5
   MeleeRange: 2
   speed: 1.4

@@ -112,11 +112,28 @@ public class PlayerController : MonoBehaviour
             audio.playClip(5);
             activeWeapon = "shotgun";
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("door");
+            ray.DoorFire();
+        }
     
         /* UPDATES UI */
         UI.PlayerUpdateUI(activeWeapon, bullets, bulletsMax, shells, shellsMax, health, healthMax, armor, ArmorMax);
     }
-    
+
+    private void OnCollisionEnter(Collision c)
+    {
+        if (c.collider.CompareTag("Projectile"))
+        {
+            Damage(10);
+            Debug.Log("You took damage from a projectile");
+            audio.playClip(3);
+            c.gameObject.SetActive(false);
+        }
+    }
+
     /* PICKUPS & COLLISION */
     public void OnTriggerEnter(Collider c)
     {
