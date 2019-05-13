@@ -828,6 +828,7 @@ MonoBehaviour:
   speed: 1
   wallDetectionRange: 1
   range: 50
+  noFloor: 0
   isWalking: 0
   walkingTimer: 0
   fireTime: 5
@@ -838,8 +839,10 @@ MonoBehaviour:
   wallTime: 1
   enemyScript: {fileID: 0}
   player: {fileID: 0}
+  playerCol: {fileID: 0}
   playerScript: {fileID: 0}
   projectile: {fileID: 0}
+  thisAnimator: {fileID: 0}
   debug: 0
 --- !u!136 &1221566748
 CapsuleCollider:
@@ -942,16 +945,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2221924759465918987, guid: b2616197f78cebf4ca97951288a3ce51,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 2221924759465918987, guid: b2616197f78cebf4ca97951288a3ce51,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.152
-      objectReference: {fileID: 0}
     - target: {fileID: 2221924759207063090, guid: b2616197f78cebf4ca97951288a3ce51,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1022,6 +1015,21 @@ PrefabInstance:
       propertyPath: head_bobbing
       value: 
       objectReference: {fileID: 598087113}
+    - target: {fileID: 2221924759207063085, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221924759465918987, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221924759465918987, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.152
+      objectReference: {fileID: 0}
     - target: {fileID: 2221924759207063091, guid: b2616197f78cebf4ca97951288a3ce51,
         type: 3}
       propertyPath: Loop
@@ -1031,11 +1039,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2221924759207063085, guid: b2616197f78cebf4ca97951288a3ce51,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 564745888, guid: b2616197f78cebf4ca97951288a3ce51, type: 3}
       propertyPath: m_RootOrder
@@ -1544,13 +1547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af26f68d17d9c0048aed7b803bad1435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   audio: {fileID: 0}
-  imp: {fileID: 0}
-  zombieman: {fileID: 0}
-  trooper: {fileID: 0}
-  playerPrefab: {fileID: 0}
-  gameState: 
 --- !u!4 &1874546846
 Transform:
   m_ObjectHideFlags: 0
@@ -1690,43 +1687,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 48ff039bc51d0284a92ad90f68963ee5, type: 3}
---- !u!1 &2098996551 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 565103232, guid: b2616197f78cebf4ca97951288a3ce51,
-    type: 3}
-  m_PrefabInstance: {fileID: 1299856443}
-  m_PrefabAsset: {fileID: 0}
---- !u!111 &2098996555
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098996551}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ada8ba36dfee187458949dc5289fb9b6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
---- !u!95 &2098996556
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098996551}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ac5a54aa4f12cf64ca737172c9884580, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
