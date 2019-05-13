@@ -807,30 +807,5 @@ PrefabInstance:
       propertyPath: game
       value: 
       objectReference: {fileID: 68760351}
-    - target: {fileID: 2221924759207063085, guid: b2616197f78cebf4ca97951288a3ce51,
-        type: 3}
-      propertyPath: m_Drag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2221924759207063085, guid: b2616197f78cebf4ca97951288a3ce51,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 101291116961955763, guid: b2616197f78cebf4ca97951288a3ce51,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 101291116961955763, guid: b2616197f78cebf4ca97951288a3ce51,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 101291116961955763, guid: b2616197f78cebf4ca97951288a3ce51,
-        type: 3}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2616197f78cebf4ca97951288a3ce51, type: 3}
