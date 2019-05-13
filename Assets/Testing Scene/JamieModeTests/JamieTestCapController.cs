@@ -8,6 +8,7 @@ public class JamieTestCapController : MonoBehaviour {
     public float speed = 10.0f;
     private float translation;
     private float straffe;
+    public float fall;
     private Rigidbody thisrigidbody;
     
     // Use this for initialization
@@ -19,11 +20,21 @@ public class JamieTestCapController : MonoBehaviour {
 	
     // Update is called once per frame
     void Update () {
+        RaycastHit hit;
         // Input.GetAxis() is used to get the user's input
         // You can furthor set it on Unity. (Edit, Project Settings, Input)
         translation = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         straffe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        transform.Translate(straffe, 0, translation);
+        if(Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(0, -0.9f, 0)), out hit, 1.3f))
+        {
+            fall = 0;
+        }
+        else
+        {
+            fall = -0.1f;
+        }
+        
+        transform.Translate(straffe, fall, translation);
 
         if (Input.GetKeyDown("escape")) {
             // turn on the cursor

@@ -7,30 +7,33 @@ using Random = System.Random;
 public class ImpBehavior : MonoBehaviour
 {
     /* ENEMY INFO */
-    private float health = 20;
-    private float damage = 10;
-    private float sightRange = 50;
-    private float playerTargetRange = 5;
-    private float MeleeRange = 2;
-    private float speed = 1.4f;
-    private float wallDetectionRange = 1f;
-    private float range = 50f;
+    public float health = 20;
+    public float damage = 10;
+    public float sightRange = 50;
+    public float playerTargetRange = 5;
+    public float MeleeRange = 2;
+    public float speed = 1.4f;
+    public float wallDetectionRange = 1f;
+    public float range = 50f;
 
     public Boolean isWalking;
+    
+    public bool noFloor = false;
     
     //timer increased when enemy is moving
     public float walkingTimer;
    
     //when walkingTimer equals fireTime the Imp will attack
     public float fireTime = 2;
-    public float fireWait = 0.5f;
+    public float fireWait = 3f;
     public bool shot = false;
     
     public float wallColTimer = 7;
     public float turnTime = 1;
     public bool turned = false;
     public bool turned2 = false;
-    
+    public bool fart = false;
+    public bool t = false;    
     
     //time the enemy ignores a player after hitting a wall
     public float ignoreTime = 2;
@@ -42,6 +45,7 @@ public class ImpBehavior : MonoBehaviour
     public GameObject player;
     public PlayerController playerScript;
     public GameObject projectile;
+    public Animator thisAnimator;
     
     //debug booleans
     public Boolean debug = false;
@@ -52,6 +56,7 @@ public class ImpBehavior : MonoBehaviour
         enemyScript.setHealth(health);
         player = GameObject.Find("Player");
         playerScript = player.GetComponent<PlayerController>();
+        thisAnimator = transform.Find("body").GetComponent<Animator>();
         transform.LookAt(PlayerPos());
     }
     
@@ -91,14 +96,30 @@ public class ImpBehavior : MonoBehaviour
 
     public void Fire()
     {
+        if (debug)
+        {
+            fart = true;
+            
+        }
         float distance = Vector3.Distance(PlayerPos(), transform.position);
 
-        if (!shot && walkingTimer > fireTime && walkingTimer < fireTime + (fireWait/7))
+        if (distance < sightRange)
+        {
+            if (debug)
+            {
+                t = true;
+            }
+            thisAnimator.SetTrigger("Throw");
+            thisAnimator.ResetTrigger("Walking");
+        }
+
+        if (!shot && walkingTimer > fireTime && walkingTimer < fireTime + (fireWait * 1/7))
         {
             if (distance < MeleeRange)
             {
                 transform.LookAt(PlayerPos());
                 MeleeAttack();
+                //thisAnimator.SetTrigger("Throw");
                 //transform.Rotate(Vector3.up, 100);
                 if (debug)
                 {
@@ -118,7 +139,7 @@ public class ImpBehavior : MonoBehaviour
             {
                 //transform.Rotate(Vector3.up,180);
             }
-        }else if (!shot && walkingTimer > fireTime + ((fireWait*2)/7))
+        }else if (!shot && walkingTimer > fireTime + ((fireWait*2)/3))
         {
             if (distance < sightRange)
             {
@@ -140,6 +161,11 @@ public class ImpBehavior : MonoBehaviour
         {
             //FIRES BULLET
             shot = false;
+            if (debug)
+            {
+                t = false;
+                fart = false;
+            }
             WalkingTimerReset();
             
         }
@@ -149,7 +175,13 @@ public class ImpBehavior : MonoBehaviour
     public void Walk()
     {
         WallCol();
-        transform.Translate(Vector3.forward*Time.deltaTime*speed);
+        thisAnimator.SetTrigger("Walking");
+        thisAnimator.ResetTrigger("Throw");
+        float distance = Vector3.Distance(playerPos(), transform.position);
+        if (distance < sightRange)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        }
     }
     
     //factors wall contact into AI pathing
@@ -166,6 +198,29 @@ public class ImpBehavior : MonoBehaviour
             Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.back), Color.magenta);
             Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.right), Color.magenta);
             Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.left), Color.magenta);
+        }
+        
+        if (Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(0, -0.9f, 2)), out hit, wallDetectionRange*2))
+        {
+            Debug.DrawRay(this.transform.position, transform.TransformDirection(new Vector3(0,-0.9f,2)) * wallDetectionRange, Color.cyan);
+
+            if (debug)
+            {
+                //Debug.Log("i" + hit.collider.name);
+            }
+
+            if (hit.collider.Equals(null))
+            {
+                noFloor = true;
+            }
+            else
+            {
+                noFloor = false;
+            }
+        }
+        else
+        {
+            noFloor = true;
         }
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit,wallDetectionRange) )
@@ -285,8 +340,11 @@ public class ImpBehavior : MonoBehaviour
 
     public void FireProjectile()
     {
-        Vector3 bop = transform.position;
-        GameObject projectileShot = Instantiate(projectile,bop,Quaternion.identity);
+        Vector3 f = Vector3.forward;
+        Vector3 bop = transform.position + transform.TransformDirection(Vector3.forward);
+        bop = new Vector3(bop.x, bop.y + 1, bop.z);
+        
+        GameObject projectileShot = Instantiate(projectile, bop,Quaternion.identity);
         projectileShot.transform.LookAt(player.transform);
         Debug.Log("Enemy Fired");
     }
@@ -312,5 +370,11 @@ public class ImpBehavior : MonoBehaviour
     {
         get => walkingTimer;
         set => walkingTimer = value;
+    }
+    
+    public Vector3 playerPos()
+    {
+        Vector3 newpos = new Vector3(player.transform.position.x,transform.position.y, player.transform.position.z );
+        return newpos;
     }
 }

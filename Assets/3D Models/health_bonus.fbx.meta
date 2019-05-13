@@ -6,10 +6,16 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: No Name
+    2100002: Material
     2300000: //RootNode
     3300000: //RootNode
     4300000: Sphere
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 8ff648b7ab9f51c44a82b7abd44d1cea, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -337,7 +337,6 @@ public class PlayerController : MonoBehaviour
                 health = 0;
                 
             }
-            health = 0;
         }
     }
 }
