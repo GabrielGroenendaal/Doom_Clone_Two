@@ -101,7 +101,7 @@ public class ZombiemenBehavior : MonoBehaviour
             if (distance < tooCloseRange)
             {
                 transform.LookAt(playerPos());
-                transform.Rotate(Vector3.up, 100);
+                //transform.Rotate(Vector3.up, 100);
                 if (debug)
                 {
                     Debug.Log("Too Close");
@@ -110,10 +110,10 @@ public class ZombiemenBehavior : MonoBehaviour
             else if (distance < sightRange)
             {
                 transform.LookAt(playerPos());
-                Debug.Log("Turn");
+                
                 if (debug)
                 {
-
+                    Debug.Log("Turn");
                 }
             }
             else

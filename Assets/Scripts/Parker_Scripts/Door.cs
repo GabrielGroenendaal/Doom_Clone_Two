@@ -6,8 +6,11 @@ using UnityEngine;
 //**Used By Raycast**
 public class Door : MonoBehaviour
 {
-    public float openSpeed = 30f;
-    
+    public float openSpeed = 0.2f;
+    public bool opening = false;
+    public float openingTime = 1;
+    public float timer = 0;
+    public bool done = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +21,21 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (opening && !done)
+        {
+            if ( timer > openingTime)
+            {
+                opening = false;
+                done = true;
+
+            }
+            transform.Translate(Vector3.up * openSpeed * Time.deltaTime);
+            timer += Time.deltaTime;
+        }
     }
 
     public void OpenDoor()
     {
-        transform.Translate(Vector3.up * openSpeed * Time.deltaTime);
+        opening = true;
     }
 }

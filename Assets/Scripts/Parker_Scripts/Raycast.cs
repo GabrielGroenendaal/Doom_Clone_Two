@@ -42,7 +42,7 @@ public class Raycast : MonoBehaviour
         
         if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, hitScanRange) && hit.collider.tag == "Enemy")
         {
-            Debug.Log("BANG!");
+            //Debug.Log("BANG!");
             //assigns damage to hit enemy
             hit.collider.gameObject.GetComponent<EnemyBaseScript>().EnemyHit(damage);
         }

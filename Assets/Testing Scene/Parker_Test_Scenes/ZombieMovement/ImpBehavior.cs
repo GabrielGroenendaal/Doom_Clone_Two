@@ -118,7 +118,7 @@ public class ImpBehavior : MonoBehaviour
             if (distance < MeleeRange)
             {
                 transform.LookAt(PlayerPos());
-                MeleeAttack();
+                //MeleeAttack();
                 //thisAnimator.SetTrigger("Throw");
                 //transform.Rotate(Vector3.up, 100);
                 if (debug)
@@ -129,10 +129,10 @@ public class ImpBehavior : MonoBehaviour
             else if (distance < sightRange)
             {
                 transform.LookAt(PlayerPos());
-                Debug.Log("Turn");
+                
                 if (debug)
                 {
-
+                    Debug.Log("Turn");
                 }
             }
             else
@@ -321,12 +321,20 @@ public class ImpBehavior : MonoBehaviour
     public void FireScan()
     {
         RaycastHit hit;
-        Debug.Log("Enemy Fired");
+        if (debug)
+        {
+            Debug.Log("Enemy Fired");
+        }
+
         Debug.DrawRay(this.transform.position, transform.TransformDirection(Vector3.forward)*range, Color.yellow);
         
         if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range) && hit.collider.CompareTag("Player"))
         {
-            Debug.Log("Player Hit");
+            if (debug)
+            {
+                Debug.Log("Player Hit");
+            }
+
             enemyScript.sound();
             playerScript.Damage(damage);
         }
@@ -346,7 +354,10 @@ public class ImpBehavior : MonoBehaviour
         
         GameObject projectileShot = Instantiate(projectile, bop,Quaternion.identity);
         projectileShot.transform.LookAt(player.transform);
-        Debug.Log("Enemy Fired");
+        if (debug)
+        {
+            Debug.Log("Enemy Fired");
+        }
     }
     
     /*
