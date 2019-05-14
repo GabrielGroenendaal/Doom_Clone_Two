@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour
         else if (gameState == "level 1")
         {
             if (Input.GetKeyDown(KeyCode.Escape)) { SceneManager.LoadScene(0); } // RETURN TO MAIN MENU
-            if (Input.GetKeyDown(KeyCode.Space)) { SceneManager.LoadScene(2); } // Go to Victory Screen
+            // if (Input.GetKeyDown(KeyCode.Space)) { SceneManager.LoadScene(2); } // Go to Victory Screen
             if (Input.GetKeyDown(KeyCode.Backspace)) { SceneManager.LoadScene(3); } // Go to Fail Screen
         }
 
