@@ -328,6 +328,12 @@ public class PlayerController : MonoBehaviour
             audio.playClip(3);
             c.gameObject.SetActive(false);
         }
+        
+        else if (c.CompareTag("Final"))
+        {
+           game.Victory();
+        }
+        
         else if (c.CompareTag("Enemy"))
         {
             Damage(10);
