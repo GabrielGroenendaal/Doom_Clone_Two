@@ -401,7 +401,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (2)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -557,7 +557,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (2)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -742,7 +742,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (1)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -817,7 +817,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (2)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -967,7 +967,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (4)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -1042,7 +1042,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (1)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -1117,7 +1117,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (3)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -1207,7 +1207,7 @@ PrefabInstance:
     - target: {fileID: 3443503684254932121, guid: 790cbbf1d4ebc28419f160d051633231,
         type: 3}
       propertyPath: m_Name
-      value: Ammo Clip (2)
+      value: Ammo Clip
       objectReference: {fileID: 0}
     - target: {fileID: 3443503684254932120, guid: 790cbbf1d4ebc28419f160d051633231,
         type: 3}
@@ -1282,7 +1282,7 @@ PrefabInstance:
     - target: {fileID: 3052363771481528897, guid: 60c02d878ce154e4b8a02e7d8ce5ea19,
         type: 3}
       propertyPath: m_Name
-      value: Stimpack (1)
+      value: Stimpack
       objectReference: {fileID: 0}
     - target: {fileID: 3052363771481528902, guid: 60c02d878ce154e4b8a02e7d8ce5ea19,
         type: 3}
@@ -1357,7 +1357,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (1)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -1432,7 +1432,7 @@ PrefabInstance:
     - target: {fileID: 7096873158364191871, guid: 29bc4d6b981559e48ab018d7b1f319ad,
         type: 3}
       propertyPath: m_Name
-      value: Shells (2)
+      value: Shells
       objectReference: {fileID: 0}
     - target: {fileID: 7096873158364191870, guid: 29bc4d6b981559e48ab018d7b1f319ad,
         type: 3}
@@ -1507,7 +1507,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (3)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -1582,7 +1582,7 @@ PrefabInstance:
     - target: {fileID: 2243717470940214498, guid: 2340ae8517fc1f74ab880dfed72f0225,
         type: 3}
       propertyPath: m_Name
-      value: Medikit (1)
+      value: Medikit
       objectReference: {fileID: 0}
     - target: {fileID: 2243717470940214499, guid: 2340ae8517fc1f74ab880dfed72f0225,
         type: 3}
@@ -1657,7 +1657,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (3)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -1732,7 +1732,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (4)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -1807,7 +1807,7 @@ PrefabInstance:
     - target: {fileID: 2742112182893196398, guid: 35357f6e74c0ba84f8d729a3aff3d5f5,
         type: 3}
       propertyPath: m_Name
-      value: Shell Box (1)
+      value: Shell Box
       objectReference: {fileID: 0}
     - target: {fileID: 2742112182893196369, guid: 35357f6e74c0ba84f8d729a3aff3d5f5,
         type: 3}
@@ -1882,7 +1882,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (1)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -1957,7 +1957,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (2)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -2032,7 +2032,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (1)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -2107,7 +2107,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (2)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -2197,7 +2197,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (2)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -2272,7 +2272,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (1)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -2347,7 +2347,7 @@ PrefabInstance:
     - target: {fileID: 7096873158364191871, guid: 29bc4d6b981559e48ab018d7b1f319ad,
         type: 3}
       propertyPath: m_Name
-      value: Shells (1)
+      value: Shells
       objectReference: {fileID: 0}
     - target: {fileID: 7096873158364191870, guid: 29bc4d6b981559e48ab018d7b1f319ad,
         type: 3}
@@ -2422,7 +2422,7 @@ PrefabInstance:
     - target: {fileID: 3443503684254932121, guid: 790cbbf1d4ebc28419f160d051633231,
         type: 3}
       propertyPath: m_Name
-      value: Ammo Clip (1)
+      value: Ammo Clip
       objectReference: {fileID: 0}
     - target: {fileID: 3443503684254932120, guid: 790cbbf1d4ebc28419f160d051633231,
         type: 3}
@@ -2572,7 +2572,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (1)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -2647,7 +2647,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (1)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -2722,7 +2722,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (1)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -2797,7 +2797,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (5)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -2887,7 +2887,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (2)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -2962,7 +2962,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (4)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -3037,7 +3037,7 @@ PrefabInstance:
     - target: {fileID: 601782517293210115, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
       propertyPath: m_Name
-      value: Health Bonus (1)
+      value: Health Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 601782517293210116, guid: 42a089731b57f2a4d9084e5d9e227c44,
         type: 3}
@@ -3112,7 +3112,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (2)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
@@ -3187,7 +3187,7 @@ PrefabInstance:
     - target: {fileID: 929267526893936981, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
       propertyPath: m_Name
-      value: Armor Bonus (3)
+      value: Armor Bonus
       objectReference: {fileID: 0}
     - target: {fileID: 929267526893936986, guid: 64db7e5c96f3f87478d58fec50dab87b,
         type: 3}
