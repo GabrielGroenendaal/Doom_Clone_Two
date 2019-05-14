@@ -25,7 +25,6 @@ public class GameController : MonoBehaviour
     
     void Start()
     {
-        audio = GetComponent<AudioController>();
         gameState = SceneManager.GetActiveScene().name;
         
         if (gameState == "main menu")
@@ -79,6 +78,6 @@ public class GameController : MonoBehaviour
     
     public void GameOver()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 }

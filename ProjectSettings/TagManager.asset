@@ -9,6 +9,8 @@ TagManager:
   - Projectile
   - Enemy
   - Door
+  - Final
+  - Fire
   layers:
   - Default
   - TransparentFX
