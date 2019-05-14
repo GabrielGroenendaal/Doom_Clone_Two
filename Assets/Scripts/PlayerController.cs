@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     /*HITSCAN CODE*/
     public Raycast ray;
     private GameObject camera;
+    public float poisonTimer = 0;
     
     /* */
     public GameObject pistolModel;
@@ -328,6 +329,20 @@ public class PlayerController : MonoBehaviour
             Damage(10);
             Debug.Log("You took damage from touching an enemy");
             audio.playClip(3);
+        }
+    }
+
+    private void OnTriggerStay(Collider c)
+    {
+        
+        if (c.transform.name == "PoisonFloor")
+        {
+            poisonTimer += Time.deltaTime;
+            if (poisonTimer > 1f)
+            {
+                Damage(1);
+                poisonTimer = 0;
+            }
         }
     }
 

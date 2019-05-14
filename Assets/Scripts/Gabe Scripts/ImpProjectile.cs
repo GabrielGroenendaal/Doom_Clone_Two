@@ -21,9 +21,9 @@ public class ImpProjectile : MonoBehaviour
     void OnCollisionEnter(Collision c)
     {
         //Debug.Log("ferrt");
-        //if (!c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Pickup"))
-        //{
+        if (!c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Pickup"))
+        {
             transform.gameObject.SetActive(false);
-        //}
+        }
     }
 }
