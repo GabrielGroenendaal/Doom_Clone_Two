@@ -20,7 +20,7 @@ public class fixingImpProjectile : MonoBehaviour
     {
         if (c.CompareTag("Projectile"))
         {
-            c.gameObject.SetActive(false);
+            //c.gameObject.SetActive(false);
         }
     }
 }

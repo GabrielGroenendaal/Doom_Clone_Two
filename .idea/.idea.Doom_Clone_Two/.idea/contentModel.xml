@@ -47,6 +47,7 @@
           <e p="Parker_Scripts" t="Include">
             <e p="Door.cs" t="Include" />
             <e p="EnemyBaseScript.cs" t="Include" />
+            <e p="NewBehaviourScript.cs" t="Include" />
             <e p="Player_Move_FP.cs" t="Include" />
             <e p="Raycast.cs" t="Include" />
           </e>
