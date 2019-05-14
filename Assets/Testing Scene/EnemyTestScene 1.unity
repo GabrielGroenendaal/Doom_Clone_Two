@@ -1149,15 +1149,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.85504013
       objectReference: {fileID: 0}
-    - target: {fileID: 834642281, guid: b2616197f78cebf4ca97951288a3ce51, type: 3}
-      propertyPath: damage
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746253459928490551, guid: b2616197f78cebf4ca97951288a3ce51,
-        type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2221924759207063086, guid: b2616197f78cebf4ca97951288a3ce51,
         type: 3}
       propertyPath: game
@@ -1168,6 +1159,20 @@ PrefabInstance:
       propertyPath: ray
       value: 
       objectReference: {fileID: 1598841655}
+    - target: {fileID: 2221924759465918987, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746253459928490551, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 834642281, guid: b2616197f78cebf4ca97951288a3ce51, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2616197f78cebf4ca97951288a3ce51, type: 3}
 --- !u!1 &1274622268 stripped
@@ -1556,7 +1561,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1235360956}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1992040162}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1460b750b35ea714b92973dfad44bf45, type: 3}
@@ -2476,6 +2481,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e720cc9e00d5304bbfb6b4ebfeb8dba, type: 3}
+--- !u!1 &1992040162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2221924759465918984, guid: b2616197f78cebf4ca97951288a3ce51,
+    type: 3}
+  m_PrefabInstance: {fileID: 1235360956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &1992040163
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992040162}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a4bae418cb1b8124991409c7fa82c9fd, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &1992040164
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992040162}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6af0532dc4e498448b26b07bf9488185, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1992040169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992040162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d1f941c2c2909429dae18836b3a535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head_bobbing: {fileID: 1992040164}
 --- !u!1 &2061388212 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: f54b56f6ab9c6ce4584ad346d343aef4,
@@ -2604,6 +2662,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3443503684254932121, guid: 790cbbf1d4ebc28419f160d051633231,
+        type: 3}
+      propertyPath: m_Name
+      value: Ammo Clip
+      objectReference: {fileID: 0}
     - target: {fileID: 3443503684254932120, guid: 790cbbf1d4ebc28419f160d051633231,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2658,11 +2721,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443503684254932121, guid: 790cbbf1d4ebc28419f160d051633231,
-        type: 3}
-      propertyPath: m_Name
-      value: Ammo Clip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 790cbbf1d4ebc28419f160d051633231, type: 3}
