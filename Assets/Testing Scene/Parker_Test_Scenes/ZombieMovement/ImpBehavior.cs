@@ -48,7 +48,7 @@ public class ImpBehavior : MonoBehaviour
     public Animator thisAnimator;
     
     //debug booleans
-    public Boolean debug = false;
+    public bool debug = false;
     void Start()
     {
         enemyScript = gameObject.GetComponent<EnemyBaseScript>();

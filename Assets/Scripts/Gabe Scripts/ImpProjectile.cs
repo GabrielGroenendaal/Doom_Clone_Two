@@ -20,10 +20,10 @@ public class ImpProjectile : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        Debug.Log("ferrt");
-        if (!c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Enemy") && !c.gameObject.CompareTag("Pickup"))
-        {
+        //Debug.Log("ferrt");
+        //if (!c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Pickup"))
+        //{
             transform.gameObject.SetActive(false);
-        }
+        //}
     }
 }
