@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
         UI.ActiveWeapon(0); // Sets active weapon on UI to the pistol
         pistolModel.SetActive(true);
         shotgunModel.SetActive(false);
+        ray.damage = 5;
         game = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
@@ -100,6 +101,7 @@ public class PlayerController : MonoBehaviour
                     audio.playClip(1); // Shotgun Fire sound effect
                     reloadTimer = 0.8f; // Sets a reload timer
                     shells -= 1; // Increments Bullet Counter
+                    ray.HitScanFire();
                     // Animation
                 }
             }
@@ -113,6 +115,7 @@ public class PlayerController : MonoBehaviour
             activeWeapon = "pistol";
             pistolModel.SetActive(true);
             shotgunModel.SetActive(false);
+            ray.damage = 5;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && hasShotgun)
         {
@@ -121,6 +124,7 @@ public class PlayerController : MonoBehaviour
             activeWeapon = "shotgun";
             pistolModel.SetActive(false);
             shotgunModel.SetActive(true);
+            ray.damage = 10;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
