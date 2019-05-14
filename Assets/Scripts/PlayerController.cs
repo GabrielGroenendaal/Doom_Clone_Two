@@ -143,6 +143,12 @@ public class PlayerController : MonoBehaviour
             audio.playClip(3);
             c.gameObject.SetActive(false);
         }
+        else if (c.collider.CompareTag("Enemy"))
+        {
+            Damage(10);
+            Debug.Log("You took damage from touching an enemy");
+            audio.playClip(3);
+        }
     }
 
     /* PICKUPS & COLLISION */
@@ -317,23 +323,12 @@ public class PlayerController : MonoBehaviour
         
         // Simple placeholder code for registering damage from enemies and projectile objects
         // We will replace this with Collision code on the Projectiles / Enemies, since they won't be triggers
-        else if (c.CompareTag("Projectile"))
-        {
-            Damage(10);
-            Debug.Log("You took damage from a projectile");
-            audio.playClip(3);
-            c.gameObject.SetActive(false);
-        }
-        else if (c.CompareTag("Enemy"))
-        {
-            Damage(10);
-            Debug.Log("You took damage from touching an enemy");
-            audio.playClip(3);
-        }
+        
     }
 
     private void OnTriggerStay(Collider c)
     {
+        //Debug.Log("pooooooooooooooooooooooooooooooooo");
         
         if (c.transform.name == "PoisonFloor")
         {

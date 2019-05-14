@@ -10,6 +10,7 @@
       <e p="Assets" t="Include">
         <e p="Animation" t="Include">
           <e p="Logan" t="Include">
+            <e p="Gun_Sway_Script.cs" t="Include" />
             <e p="Head_Bobbing_Script.cs" t="Include" />
           </e>
         </e>

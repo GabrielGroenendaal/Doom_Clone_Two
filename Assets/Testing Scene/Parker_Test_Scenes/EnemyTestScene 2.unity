@@ -1262,12 +1262,12 @@ PrefabInstance:
     - target: {fileID: 2221924759207063090, guid: b2616197f78cebf4ca97951288a3ce51,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.24
+      value: 24.48
       objectReference: {fileID: 0}
     - target: {fileID: 2221924759207063090, guid: b2616197f78cebf4ca97951288a3ce51,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 246.23
+      value: 245.73
       objectReference: {fileID: 0}
     - target: {fileID: 2221924759207063090, guid: b2616197f78cebf4ca97951288a3ce51,
         type: 3}
@@ -1402,6 +1402,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 101291116961955763, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 101291116961955763, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: m_Height
+      value: 2.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 101291116961955763, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 101291116961955763, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 101291116961955763, guid: b2616197f78cebf4ca97951288a3ce51,
+        type: 3}
+      propertyPath: m_Direction
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2616197f78cebf4ca97951288a3ce51, type: 3}
@@ -1955,6 +1980,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1887238905}
     m_Modifications:
+    - target: {fileID: 100000, guid: f54b56f6ab9c6ce4584ad346d343aef4, type: 3}
+      propertyPath: m_Name
+      value: HangerLevelModel
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f54b56f6ab9c6ce4584ad346d343aef4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -42.563004
@@ -2006,10 +2035,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: f54b56f6ab9c6ce4584ad346d343aef4, type: 3}
       propertyPath: m_LocalScale.z
       value: 2.539999
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: f54b56f6ab9c6ce4584ad346d343aef4, type: 3}
-      propertyPath: m_Name
-      value: HangerLevelModel
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: f54b56f6ab9c6ce4584ad346d343aef4, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2806,6 +2831,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3443503684254932121, guid: 790cbbf1d4ebc28419f160d051633231,
+        type: 3}
+      propertyPath: m_Name
+      value: Ammo Clip
+      objectReference: {fileID: 0}
     - target: {fileID: 3443503684254932120, guid: 790cbbf1d4ebc28419f160d051633231,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2860,11 +2890,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443503684254932121, guid: 790cbbf1d4ebc28419f160d051633231,
-        type: 3}
-      propertyPath: m_Name
-      value: Ammo Clip
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 790cbbf1d4ebc28419f160d051633231, type: 3}
