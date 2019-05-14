@@ -5,19 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Testing Scene/Gabe_Test_Scenes/main menu.unity
     guid: bbefb65632878cb409713b162b9fce3e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Testing Scene/Parker_Test_Scenes/EnemyTestScene 2.unity
     guid: ffcbc12940da9604282e446791a54e89
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Testing Scene/Parker_Test_Scenes/ZombieMovement/EnemyTestScene.unity
+    guid: 658a077cd30e6754f903954e4438fcac
+  - enabled: 0
+    path: Assets/Testing Scene/EnemyTestScene 1.unity
+    guid: d1025fd182c3fd548a4fc1a87aac9983
+  - enabled: 0
     path: Assets/Testing Scene/Gabe_Test_Scenes/victory.unity
     guid: a37f25ebc4beeff41bcf3da4efecd2c8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Testing Scene/Gabe_Test_Scenes/game over.unity
     guid: 6da82609bb7c2bc43a11f03753a0db00
-  - enabled: 0
+  - enabled: 1
     path: Assets/Testing Scene/Gabe_Test_Scenes/level 1.unity
     guid: 80db3329eec005f498fa221823c3e83a
   m_configObjects: {}

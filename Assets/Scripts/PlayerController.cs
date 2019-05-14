@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
         UI.ActiveWeapon(0); // Sets active weapon on UI to the pistol
         pistolModel.SetActive(true);
         shotgunModel.SetActive(false);
+        ray.damage = 5;
         game = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
@@ -101,6 +102,7 @@ public class PlayerController : MonoBehaviour
                     audio.playClip(1); // Shotgun Fire sound effect
                     reloadTimer = 0.8f; // Sets a reload timer
                     shells -= 1; // Increments Bullet Counter
+                    ray.HitScanFire();
                     // Animation
                 }
             }
@@ -114,6 +116,7 @@ public class PlayerController : MonoBehaviour
             activeWeapon = "pistol";
             pistolModel.SetActive(true);
             shotgunModel.SetActive(false);
+            ray.damage = 5;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && hasShotgun)
         {
@@ -122,6 +125,7 @@ public class PlayerController : MonoBehaviour
             activeWeapon = "shotgun";
             pistolModel.SetActive(false);
             shotgunModel.SetActive(true);
+            ray.damage = 10;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -142,12 +146,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log("You took damage from a projectile");
             audio.playClip(3);
             c.gameObject.SetActive(false);
-        }
-        else if (c.collider.CompareTag("Enemy"))
-        {
-            Damage(10);
-            Debug.Log("You took damage from touching an enemy");
-            audio.playClip(3);
         }
     }
 
@@ -323,12 +321,29 @@ public class PlayerController : MonoBehaviour
         
         // Simple placeholder code for registering damage from enemies and projectile objects
         // We will replace this with Collision code on the Projectiles / Enemies, since they won't be triggers
+        else if (c.CompareTag("Projectile"))
+        {
+            Damage(10);
+            Debug.Log("You took damage from a projectile");
+            audio.playClip(3);
+            c.gameObject.SetActive(false);
+        }
         
+        else if (c.CompareTag("Final"))
+        {
+           game.Victory();
+        }
+        
+        else if (c.CompareTag("Enemy"))
+        {
+            Damage(10);
+            Debug.Log("You took damage from touching an enemy");
+            audio.playClip(3);
+        }
     }
 
     private void OnTriggerStay(Collider c)
     {
-        //Debug.Log("pooooooooooooooooooooooooooooooooo");
         
         if (c.transform.name == "PoisonFloor")
         {

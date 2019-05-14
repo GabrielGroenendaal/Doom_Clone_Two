@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: a6a5a86b272dfb241b99d7e4131eb320, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 1.011084, g: 1.0214211, b: 1.026124, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -217,6 +217,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openSpeed: 30
+  opening: 0
+  openingTime: 1
+  timer: 0
+  done: 0
 --- !u!1001 &158749741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -848,6 +852,7 @@ MonoBehaviour:
   wallDetectionRange: 1
   range: 50
   isWalking: 0
+  noFloor: 0
   walkingTimer: 0
   fireTime: 2
   fireWait: 0.5
@@ -856,6 +861,8 @@ MonoBehaviour:
   turnTime: 1
   turned: 0
   turned2: 0
+  fart: 0
+  t: 0
   ignoreTime: 2
   wallTime: 1
   enemyScript: {fileID: 0}
@@ -863,6 +870,7 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   projectile: {fileID: 349624860906234712, guid: 6016faccb34ec9140af816443335a464,
     type: 3}
+  thisAnimator: {fileID: 0}
   debug: 0
 --- !u!1001 &951617985
 PrefabInstance:
@@ -958,6 +966,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e19ff2150df15345894a27fc985e498, type: 3}
+--- !u!1 &972333306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 972333308}
+  - component: {fileID: 972333307}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!45 &972333307
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972333306}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: a6a5a86b272dfb241b99d7e4131eb320, type: 2}
+--- !u!4 &972333308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972333306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3316498, y: 24.273315, z: 107.00137}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1166841120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1956,6 +2004,7 @@ MonoBehaviour:
   wallDetectionRange: 1
   range: 50
   isWalking: 0
+  noFloor: 0
   walkingTimer: 0
   fireTime: 5
   fireWait: 0.5
@@ -1964,6 +2013,8 @@ MonoBehaviour:
   turnTime: 1
   turned: 0
   turned2: 0
+  fart: 0
+  t: 0
   ignoreTime: 2
   wallTime: 1
   enemyScript: {fileID: 0}
@@ -1971,6 +2022,7 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   projectile: {fileID: 349624860906234712, guid: 6016faccb34ec9140af816443335a464,
     type: 3}
+  thisAnimator: {fileID: 0}
   debug: 0
 --- !u!54 &1706737167
 Rigidbody:
