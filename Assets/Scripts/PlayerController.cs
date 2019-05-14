@@ -38,6 +38,10 @@ public class PlayerController : MonoBehaviour
     /*HITSCAN CODE*/
     public Raycast ray;
     private GameObject camera;
+    
+    /* */
+    public GameObject pistolModel;
+    public GameObject shotgunModel;
 
     // Initializes values of player resources, game states, and movement
     void Start()
@@ -53,11 +57,13 @@ public class PlayerController : MonoBehaviour
         shellsMax = 50;
         
         /* GAME STATES */
-        hasShotgun = false;
+        hasShotgun = true;
         blueArmor = false;
         greenArmor = false;
         activeWeapon = "pistol";
         UI.ActiveWeapon(0); // Sets active weapon on UI to the pistol
+        pistolModel.SetActive(true);
+        shotgunModel.SetActive(false);
         game = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
@@ -105,12 +111,16 @@ public class PlayerController : MonoBehaviour
             UI.ActiveWeapon(0); // changes visual for active weapon
             audio.playClip(4);
             activeWeapon = "pistol";
+            pistolModel.SetActive(true);
+            shotgunModel.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && hasShotgun)
         {
             UI.ActiveWeapon(1); // changes visual for active weapon
             audio.playClip(5);
             activeWeapon = "shotgun";
+            pistolModel.SetActive(false);
+            shotgunModel.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
