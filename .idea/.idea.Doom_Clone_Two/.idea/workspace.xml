@@ -78,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="206">
-              <caret line="146" column="9" lean-forward="true" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
+              <caret line="146" column="9" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
               <folding>
                 <marker date="1557849560068" expanded="false" signature="6:135" ph="..." />
                 <marker date="1557849560068" expanded="true" signature="137:357" ph="/* This script serves as a brain for several different scripts, but the main three functions are: ... */" />
@@ -921,7 +921,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
-          <caret line="146" column="9" lean-forward="true" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
+          <caret line="146" column="9" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
           <folding>
             <marker date="1557849560068" expanded="false" signature="6:135" ph="..." />
             <marker date="1557849560068" expanded="true" signature="137:357" ph="/* This script serves as a brain for several different scripts, but the main three functions are: ... */" />
